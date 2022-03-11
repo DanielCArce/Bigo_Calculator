@@ -46,7 +46,9 @@ export default function Home() {
       </Head>
       <div className="grid gap-5 grid-cols-2 leading-10 my-10 mx-4">
         <div>
-          <h2>Aclaraciones y descargo de responsabilidades</h2>
+          <h2 className="text-center text-4xl uppercase">
+            Aclaraciones y descargo de responsabilidades
+          </h2>
           <p>Los calculos tienen sus siguientes condiciones;</p>
           <ol>
             <li>
@@ -65,7 +67,11 @@ export default function Home() {
           </ol>
         </div>
         <div>
-          <h2 className="text-center">Calculador de compensación</h2>
+          <h2 className="text-center text-4xl uppercase">
+            
+          
+            Calculador de compensación
+          </h2>
           <p>Calculador de Porcentaje de Exterior para convertirlo a % LATAM</p>
           <form onSubmit={onHandleSubmit}>
             <div className="my-8 grid grid-cols-2 gap-2">
@@ -104,40 +110,42 @@ export default function Home() {
           </form>
           <div className="mt-8">
             <h2 className="text-center">Resumen de Calculo</h2>
-            <p>
-              Semillas Iniciales:{" "}
-              {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                totalSeeds
-              )}
-            </p>
-            <p>
-              Porcentaje Exterior:{" "}
-              {new Intl.NumberFormat("en-US", { style: "percent" }).format(
-                exteriorPercentage
-              )}
-              {", equivale a: "}
-              {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                Math.ceil(totalSeeds * exteriorPercentage)
-              )}
-              {" Semillas."}
-            </p>
-            <p>
-              Semillas Para Corregir:{" "}
-              {data &&
-                new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                  data.seed_for_balance
+            <div className="grid grid-cols-2">
+              <p>
+                Semillas Iniciales:{" "}
+                {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+                  totalSeeds
                 )}
-            </p>
-            <p>
-              Semillas Finales:{" "}
-              {data &&
-                new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                  data.final_total_seeds
+              </p>
+              <p>
+                Porcentaje Exterior:{" "}
+                {new Intl.NumberFormat("en-US", { style: "percent" }).format(
+                  exteriorPercentage
                 )}
-            </p>
-            <button className="bg-red-500 py-1 px-3" onClick={onHandleReset}>
-              Reiniciar valores
-            </button>
+                {", equivale a: "}
+                {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+                  Math.ceil(totalSeeds * exteriorPercentage)
+                )}
+                {" Semillas."}
+              </p>
+              <p>
+                Semillas Para Corregir:{" "}
+                {data &&
+                  new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+                    data.seed_for_balance
+                  )}
+              </p>
+              <p>
+                Semillas Finales:{" "}
+                {data &&
+                  new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+                    data.final_total_seeds
+                  )}
+              </p>
+              <button className="bg-red-500 py-1 px-3" onClick={onHandleReset}>
+                Reiniciar valores
+              </button>
+            </div>
           </div>
         </div>
       </div>
