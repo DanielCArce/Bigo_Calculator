@@ -140,12 +140,14 @@ export default function Home() {
                     data.final_total_seeds
                   )}
               </p>
-              <button
-                className="bg-red-600 hover:bg-red-500 py-1 px-1"
-                onClick={onHandleReset}
-              >
-                Reiniciar valores
-              </button>
+              <div>
+                <button
+                  className="bg-red-600 hover:bg-red-500 py-1 px-1"
+                  onClick={onHandleReset}
+                >
+                  Reiniciar valores
+                </button>
+              </div>
             </div>
           </div>
         </div>
