@@ -20,5 +20,5 @@ async function calculate_seeds(total_seeds, percentage_exterior) {
     (vl) => vl.exterior_percent === percentage_exterior
   );
   // console.log(percentage);
-  return Math.round(total_seeds * percentage[0].compen);
+  return Math.ceil(total_seeds * percentage[0].compen);
 }
