@@ -11,7 +11,12 @@ export default function Home() {
   const [totalSeeds, setTotalSeeds] = useState(0);
   const [exteriorPercentage, setExteriorPercentage] = useState(0.0);
   const [data, setData] = useState(null);
-
+  const onHandleReset = (e)=><{
+    e.preventDefault();
+    setData(null);
+    setTotalSeeds(0);
+    setExteriorPercentage(0.0);
+  }
   const onHandleSubmit = (e) => {
     e.preventDefault();
 
@@ -105,6 +110,7 @@ export default function Home() {
                 data.final_total_seeds
               )}
           </p>
+          <button onClick={onHandleReset}>Reset valores</button>
         </div>
       </div>
     </>
