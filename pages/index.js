@@ -21,7 +21,7 @@ export default function Home() {
     };
     const jsparse = JSON.stringify(json);
     console.log(jsparse);
-    fetch("http://localhost:3000/api/calculate", {
+    fetch("https://bigo-calculator.vercel.app/api/calculate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: jsparse,
