@@ -44,9 +44,9 @@ export default function Home() {
         <title>Calculo de Porcentaje Latam</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="grid gap-5 grid-cols-2 leading-10 my-10 mx-4">
+      <div className="grid gap-5 grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1 leading-10 my-10 mx-4">
         <div>
-          <h2 className="text-center text-4xl uppercase">
+          <h2 className="text-center text-4xl uppercase mb-4">
             Aclaraciones y descargo de responsabilidades
           </h2>
           <p>Los calculos tienen sus siguientes condiciones;</p>
@@ -68,13 +68,11 @@ export default function Home() {
         </div>
         <div>
           <h2 className="text-center text-4xl uppercase">
-            
-          
             Calculador de compensación
           </h2>
           <p>Calculador de Porcentaje de Exterior para convertirlo a % LATAM</p>
           <form onSubmit={onHandleSubmit}>
-            <div className="my-8 grid grid-cols-2 gap-2">
+            <div className="my-8 grid grid-cols-2 gap-2 sm:grid-cols-1 xsm:grid-cols-1">
               <label>Total de Semillas:</label>
               <input
                 className="w-72 text-black pl-2"
@@ -87,7 +85,7 @@ export default function Home() {
                 }}
               />
             </div>
-            <div className="my-8 grid grid-cols-2 gap-2">
+            <div className="my-8 grid grid-cols-2 gap-2 sm:grid-cols-1 xsm:grid-cols-1">
               <label>Porcentaje Exterior:</label>
               <input
                 className="w-72 text-black pl-2"
@@ -103,14 +101,14 @@ export default function Home() {
               />
             </div>
             <div>
-              <button className="py-2 px-4 bg-emerald-600">
+              <button className="py-1 px-1 bg-emerald-600 hover:bg-emerald-500">
                 Calcular Compesanci&otilde;n de semillas
               </button>
             </div>
           </form>
           <div className="mt-8">
             <h2 className="text-center">Resumen de Calculo</h2>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1">
               <p>
                 Semillas Iniciales:{" "}
                 {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
@@ -142,7 +140,10 @@ export default function Home() {
                     data.final_total_seeds
                   )}
               </p>
-              <button className="bg-red-500 py-1 px-3" onClick={onHandleReset}>
+              <button
+                className="bg-red-600 hover:bg-red-500 py-1 px-1"
+                onClick={onHandleReset}
+              >
                 Reiniciar valores
               </button>
             </div>
