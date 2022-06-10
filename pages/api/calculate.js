@@ -1,24 +1,21 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import balance_percentage from "../../calculated_percentages.json";
 export default async function handler(req, res) {
-  // console.log(req.body);
-  let seds = await calculate_seeds(
-    req.body.total_seeds,
+  let seeds = await estimate_seed(
+    req.body.initial_seeds,
     req.body.exterior_percentage
   );
-  res.status(200);
-  res.json({
-    ...req.body,
-    seed_for_balance: seds,
-    final_total_seeds: req.body.total_seeds + seds,
+  console.log(seeds);
+  res.status(200).json({
+    compensation: seeds,
+    final_seeds: req.body.initial_seeds + seeds,
   });
 }
 
-async function calculate_seeds(total_seeds, percentage_exterior) {
-  // console.log(balance_percentage.balance_percentage);
-  let percentage = balance_percentage.balance_percentage.filter(
-    (vl) => vl.exterior_percent === percentage_exterior
+async function estimate_seed(seeds, percentage) {
+  let percen = balance_percentage.balance_percentage.filter(
+    (vlr) => vlr.exterior_percent === percentage
   );
-  // console.log(percentage);
-  return Math.ceil(total_seeds * percentage[0].compen);
+  let balance = Math.ceil(seeds * percen[0].balance_rate);
+  return balance;
 }
