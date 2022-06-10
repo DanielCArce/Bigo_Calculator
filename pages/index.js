@@ -1,157 +1,23 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { useRef, useState, useEffect } from "react";
-
+import FormComponent from "./../components/FormComponent";
+import ResumeComponent from "./../components/ResumeComponent";
+import { useReducer } from "react";
+import { CalculateContext, initialState } from "../contexts/CalculateContext";
+import ReducerFunction from "../reducer/ReducerFunction";
 export default function Home() {
-  // Inputs References
-  const totalSeedsRef = useRef(null);
-  const exteriorPercentageRef = useRef(null);
-  // States
-  const [totalSeeds, setTotalSeeds] = useState(0);
-  const [exteriorPercentage, setExteriorPercentage] = useState(0.0);
-  const [data, setData] = useState(null);
-  const onHandleReset = (e) => {
-    e.preventDefault();
-    setData({ seed_for_balance: 0, final_total_seeds: 0 });
-    setTotalSeeds(0);
-    setExteriorPercentage(0.0);
-  };
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-
-    const json = {
-      total_seeds: totalSeeds,
-      exterior_percentage: exteriorPercentage,
-    };
-    const jsparse = JSON.stringify(json);
-    console.log(jsparse);
-    fetch("https://bigo-calculator.vercel.app/api/calculate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: jsparse,
-    })
-      .then((result) => result.json())
-      .then((result) => setData(result));
-    console.log({ data });
-    totalSeedsRef.current.value = null;
-    exteriorPercentageRef.current.value = null;
-  };
-
+  const [state, dispatch] = useReducer(ReducerFunction, initialState);
   return (
     <>
       <Head>
         <title>Calculo de Porcentaje Latam</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className="grid gap-5 grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1 leading-10 my-10 mx-4">
-        <div>
-          <h2 className="text-center text-4xl uppercase mb-4">
-            Aclaraciones y descargo de responsabilidades
-          </h2>
-          <p>Los calculos tienen sus siguientes condiciones;</p>
-          <ol>
-            <li>
-              Esto es una herramienta de estimación de acuerdo al live data, se
-              libera responsabilidades si el live data no esta actualizado o
-              ingresan datos erroneos.
-            </li>
-            <li>
-              Esto es una herramienta de terceros, no pertenece a bigo live.
-            </li>
-            <li>No se realiza ningún almacenamiento de datos en esta web.</li>
-            <li>
-              Se recomienda pasarse un poco mas del monto para amortiguar
-              cualquier decimal.
-            </li>
-          </ol>
+      <CalculateContext.Provider value={{ state, dispatch }}>
+        <div className="flex flex-row gap-7 px-10 py-4 justify-center">
+          <FormComponent />
+          <ResumeComponent />
         </div>
-        <div>
-          <h2 className="text-center text-4xl uppercase">
-            Calculador de compensación
-          </h2>
-          <p>Calculador de Porcentaje de Exterior para convertirlo a % LATAM</p>
-          <form onSubmit={onHandleSubmit}>
-            <div className="my-8 grid grid-cols-2 gap-2 sm:grid-cols-1 xsm:grid-cols-1">
-              <label>Total de Semillas:</label>
-              <input
-                className="w-72 text-black pl-2"
-                ref={totalSeedsRef}
-                type="text"
-                id="total_seeds"
-                name="total_seeds"
-                onChange={() => {
-                  setTotalSeeds(Number(totalSeedsRef.current.value));
-                }}
-              />
-            </div>
-            <div className="my-8 grid grid-cols-2 gap-2 sm:grid-cols-1 xsm:grid-cols-1">
-              <label>Porcentaje Exterior:</label>
-              <input
-                className="w-72 text-black pl-2"
-                ref={exteriorPercentageRef}
-                type="text"
-                id="percentage_exterior"
-                name="percentage_exterior"
-                onChange={() => {
-                  setExteriorPercentage(
-                    Number(exteriorPercentageRef.current.value) / 100
-                  );
-                }}
-              />
-            </div>
-            <div>
-              <button className="py-1 px-1 bg-emerald-600 hover:bg-emerald-500">
-                Calcular Compesanci&otilde;n de semillas
-              </button>
-            </div>
-          </form>
-          <div className="mt-8">
-            <h2 className="text-center">Resumen de Calculo</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-1 xsm:grid-cols-1">
-              <p>
-                Semillas Iniciales:{" "}
-                {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                  totalSeeds
-                )}
-              </p>
-              <p>
-                Porcentaje Exterior:{" "}
-                {new Intl.NumberFormat("en-US", { style: "percent" }).format(
-                  exteriorPercentage
-                )}
-                {", equivale a: "}
-                {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                  Math.ceil(totalSeeds * exteriorPercentage)
-                )}
-                {" Semillas."}
-              </p>
-              <p>
-                Semillas Para Corregir:{" "}
-                {data &&
-                  new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                    data.seed_for_balance
-                  )}
-              </p>
-              <p>
-                Semillas Finales:{" "}
-                {data &&
-                  new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-                    data.final_total_seeds
-                  )}
-              </p>
-              <div>
-                <button
-                  className="bg-red-600 hover:bg-red-500 py-1 px-1"
-                  onClick={onHandleReset}
-                >
-                  Reiniciar valores
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </CalculateContext.Provider>
     </>
   );
 }
