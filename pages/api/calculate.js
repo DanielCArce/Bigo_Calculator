@@ -1,21 +1,34 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import balance_percentage from "../../calculated_percentages.json";
-export default async function handler(req, res) {
-  let seeds = await estimate_seed(
-    req.body.initial_seeds,
-    req.body.exterior_percentage
-  );
-  console.log(seeds);
-  res.status(200).json({
-    compensation: seeds,
-    final_seeds: req.body.initial_seeds + seeds,
+import porcentages from "../../calculated_percentages.json";
+const { balance_percentage } = porcentages;
+async function generate_estimation(seeds, percentage) {
+  const percentage_for_calculate = balance_percentage.filter((value) => {
+    return value.exterior_percent === percentage;
   });
+
+  const op = percentage_for_calculate[0].balance_rate * seeds;
+
+  return Number(op);
+}
+async function handler(req, res) {
+  const { seeds_on_livedata, exterior_percentage_on_livedata } = req.body;
+  if (exterior_percentage_on_livedata <= 0.4) {
+    res.json({
+      message: "No hay nada que compensar al ser menor de 40%",
+      seeds_total: 0,
+      seeds_balance: 0,
+    });
+  }
+  generate_estimation(seeds_on_livedata, exterior_percentage_on_livedata).then(
+    (info) => {
+      const finals = Math.round(Number(seeds_on_livedata) + info);
+      res.json({
+        message: `Calculo generado ${new Date()}`,
+        seeds_total: Math.round(finals),
+        seeds_balance: Math.round(info),
+      });
+    }
+  );
 }
 
-async function estimate_seed(seeds, percentage) {
-  let percen = balance_percentage.balance_percentage.filter(
-    (vlr) => vlr.exterior_percent === percentage
-  );
-  let balance = Math.ceil(seeds * percen[0].balance_rate);
-  return balance;
-}
+export default handler;
