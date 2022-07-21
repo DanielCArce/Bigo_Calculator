@@ -26,7 +26,7 @@ function FormComponent() {
             exterior_percentage_on_livedata:
               values.percentage_exterior_user / 100,
           });
-          fetch("http://localhost:3000/api/calculate/", {
+          fetch("http://bigo-calculator.vercel.app/api/calculate/", {
             method: "POST",
             headers: {
               "content-type": "application/json",
