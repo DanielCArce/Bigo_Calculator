@@ -5,30 +5,47 @@ function DisplayInfoComponent() {
   const { state } = useContext(CalculateContext);
   return (
     <div>
-      <p>
-        Semillas Livedata:{" "}
-        {Intl.NumberFormat("en-US").format(state.seeds_on_livedata)}
-      </p>
-      <p>
-        Porcentage Exterior Livedata:{" "}
-        {Intl.NumberFormat("en-US", { style: "percent" }).format(
-          state.percentage_exterior_livedata / 100
-        )}
-        {", equivale a ("}
-        {Intl.NumberFormat("en-US").format(
-          state.seeds_on_livedata * (state.percentage_exterior_livedata / 100)
-        )}
-        {" ) "}
-        Semillas.
-      </p>
-      <p>
-        Semillas Para compensar:{" "}
-        {Intl.NumberFormat("en-US").format(state.seeds_for_balance)}
-      </p>
-      <p>
-        Semillas al final:{" "}
-        {Intl.NumberFormat("en-US").format(state.seeds_total)}
-      </p>
+      <table className="border-separate">
+        <thead>
+          <tr>
+            <td colSpan="2" className="text-center border-b-2">
+              Resumen de Cálculo
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Semillas Livedata:</td>
+            <td>
+              {Intl.NumberFormat("en-US").format(state.seeds_on_livedata)}
+            </td>
+          </tr>
+          <tr>
+            <td>Porcentage Exterior Livedata:</td>
+            <td>
+              {Intl.NumberFormat("en-US", { style: "percent" }).format(
+                state.percentage_exterior_livedata / 100
+              )}
+              {", equivale a ("}
+              {Intl.NumberFormat("en-US").format(
+                state.seeds_on_livedata *
+                  (state.percentage_exterior_livedata / 100)
+              )}
+              {" ) "}
+            </td>
+          </tr>
+          <tr>
+            <td>Semillas Para compensar:</td>
+            <td>
+              {Intl.NumberFormat("en-US").format(state.seeds_for_balance)}
+            </td>
+          </tr>
+          <tr>
+            <td>Semillas al final:</td>
+            <td>{Intl.NumberFormat("en-US").format(state.seeds_total)}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }

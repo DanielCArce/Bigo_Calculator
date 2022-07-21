@@ -49,7 +49,7 @@ function FormComponent() {
         }}
       >
         {({ values, handleBlur, handleChange, handleSubmit }) => (
-          <form onSubmit={handleSubmit} className="px-4 py-4">
+          <form onSubmit={handleSubmit} className="px-4 py-4 mb-6">
             <div className="mb-4 flex flex-row">
               <label forhml="seeds_livedata_user">Semillas en Livedata:</label>
               <input
