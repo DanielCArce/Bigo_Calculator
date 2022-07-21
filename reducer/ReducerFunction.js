@@ -1,27 +1,39 @@
-export const ACTION = {};
+export const ACTIONS = {
+  SET_SEEDS_LIVEDATA: "SET_SEEDS_LIVEDATA",
+  SET_PERCENTAGE_LIVEDATA: "SET_PERCENTAGE_LIVEDATA",
+  SET_SEEDS_BALANCE: "SET_SEEDS_BALANCE",
+  SET_SEEDS_TOTAL: "SET_SEEDS_TOTAL",
+};
 export default function ReducerFunction(state, action) {
   switch (action.type) {
-    case "SET_INITIAL_SEEDS":
+    case ACTIONS.SET_SEEDS_LIVEDATA:
       return {
         ...state,
-        initial_seeds: action.payload,
+        seeds_on_livedata: action.payload,
       };
-    case "SET_EXTERMAL_PERCENTAGE":
+    case ACTIONS.SET_PERCENTAGE_LIVEDATA:
       return {
         ...state,
-        exterior_percentage: action.payload,
+        percentage_exterior_livedata: action.payload,
       };
-    case "SET_COMPENSATION_SEED":
+    case ACTIONS.SET_SEEDS_BALANCE:
       return {
         ...state,
-        compensation_seed: action.payload,
+        seeds_for_balance: action.payload,
       };
-    case "SET_FINAL_SEED":
+    case ACTIONS.SET_SEEDS_TOTAL:
       return {
         ...state,
-        final_seed: action.payload,
+        seeds_total: action.payload,
       };
     default:
       return state;
   }
 }
+
+// {
+//   seeds_on_livedata: 0,
+//   percentage_exterior_livedata: 0.42,
+//   seeds_for_balance: 0,
+//   seeds_total: 0,
+// }

@@ -2,8 +2,8 @@ import { createContext } from "react";
 export const CalculateContext = createContext({});
 
 export const initialState = {
-  initial_seeds: 0,
-  exterior_percentage: 0.4,
-  compensation_seed: 0,
-  final_seed: 0,
+  seeds_on_livedata: 103_500,
+  percentage_exterior_livedata: 40,
+  seeds_for_balance: 0,
+  seeds_total: 0,
 };
