@@ -1,97 +1,97 @@
-import { useContext } from "react";
 import { Formik } from "formik";
-import { CalculateContext } from "./../contexts/CalculateContext";
-
+import React, { useContext } from "react";
+import { CalculateContext } from "../contexts/CalculateContext";
+import { ACTIONS } from "../reducer/ReducerFunction";
 function FormComponent() {
   const { state, dispatch } = useContext(CalculateContext);
+
   return (
-    <>
+    <React.Fragment>
       <Formik
         initialValues={{
-          initial_seeds: state.initial_seeds,
-          exterior_percentage: state.exterior_percentage,
+          seeds_livedata_user: state.seeds_on_livedata,
+          percentage_exterior_user: state.percentage_exterior_livedata,
         }}
-        onSubmit={async (values) => {
-          let json = JSON.stringify({
-            initial_seeds: Number(values.initial_seeds),
-            exterior_percentage: Number(values.exterior_percentage),
-          });
-          console.log(json);
+        onSubmit={(values) => {
           dispatch({
-            type: "SET_INITIAL_SEEDS",
-            payload: values.initial_seeds,
+            type: ACTIONS.SET_SEEDS_LIVEDATA,
+            payload: values.seeds_livedata_user,
           });
           dispatch({
-            type: "SET_EXTERMAL_PERCENTAGE",
-            payload: values.exterior_percentage,
+            type: ACTIONS.SET_PERCENTAGE_LIVEDATA,
+            payload: values.percentage_exterior_user,
           });
-          fetch("http://localhost:3000/api/calculate", {
+          const bodyContent = JSON.stringify({
+            seeds_on_livedata: values.seeds_livedata_user,
+            exterior_percentage_on_livedata:
+              values.percentage_exterior_user / 100,
+          });
+          fetch("http://localhost:3000/api/calculate/", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
+              "content-type": "application/json",
             },
-            body: json,
+            body: bodyContent,
           })
-            .then((res) => {
-              res.json();
+            .then((rawResponse) => {
+              return rawResponse.json();
             })
             .then((data) => {
               dispatch({
-                type: "SET_COMPENSATION_SEED",
-                payload: data.compensation,
+                type: ACTIONS.SET_SEEDS_BALANCE,
+                payload: data.seeds_balance,
               });
               dispatch({
-                type: "SET_FINAL_SEEDS",
-                payload: data.final_seeds,
+                type: ACTIONS.SET_SEEDS_TOTAL,
+                payload: data.seeds_total,
               });
-              console.log({ state });
             });
-          //End de onsubmit
         }}
       >
-        {({ values, handleChange, handleBlur, handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <div className="mb-14">
-              <h2>Calculadora de Compensación</h2>
-              <h3>% Exterior Bigo</h3>
-            </div>
-            <div className="mb-6 flex flex-col">
-              <label className="mb-4">Total Semillas:</label>
+        {({ values, handleBlur, handleChange, handleSubmit }) => (
+          <form onSubmit={handleSubmit} className="px-4 py-4">
+            <div className="mb-4 flex flex-row">
+              <label forhml="seeds_livedata_user">Semillas en Livedata:</label>
               <input
-                className="text-black w-60 py-2 pl-2"
-                id="totalSeeds"
                 type="text"
-                name="initial_seeds"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.initial_seeds}
+                name="seeds_livedata_user"
+                value={values.seeds_livedata_user}
+                className="text-black pl-2 py-1 w-52 ml-3"
               />
             </div>
-            <div className="mb-6 flex flex-col">
-              <label className="mb-4">Porncentage Exterior:</label>
+            <div className="mb-4 flex flex-row">
+              <label forhml="percentage_exterior_user">
+                Porcentaje Exterior:
+              </label>
               <input
-                className="text-black w-60 py-2 pl-2"
-                id="exteriorPerncentage"
                 type="text"
-                name="exterior_percentage"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.exterior_percentage}
+                name="percentage_exterior_user"
+                value={values.percentage_exterior_user}
+                className="text-black pl-2 py-1 w-52 ml-3"
               />
             </div>
             <div>
               <button
-                className="px-4 py-2 bg-blue-500 text-white"
                 type="submit"
+                className="bg-yellow-400 px-3 py-2 border-2 border-zinc-400"
               >
-                Calcular compensación
+                Realizar Calculo
               </button>
             </div>
           </form>
         )}
       </Formik>
-    </>
+    </React.Fragment>
   );
 }
-
 export default FormComponent;
+// {
+//   seeds_on_livedata: 0,
+//   percentage_exterior_livedata: 0.42,
+//   seeds_for_balance: 0,
+//   seeds_total: 0,
+// }
