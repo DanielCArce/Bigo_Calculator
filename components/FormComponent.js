@@ -50,7 +50,7 @@ function FormComponent() {
       >
         {({ values, handleBlur, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit} className="px-4 py-4 mb-6">
-            <div className="mb-4 flex flex-row">
+            <div className="mb-4 flex flex-col">
               <label forhml="seeds_livedata_user">Semillas en Livedata:</label>
               <input
                 type="text"
@@ -58,10 +58,10 @@ function FormComponent() {
                 onBlur={handleBlur}
                 name="seeds_livedata_user"
                 value={values.seeds_livedata_user}
-                className="text-black pl-2 py-1 w-52 ml-3"
+                className="text-black pl-2 py-1 w-52 mt-3"
               />
             </div>
-            <div className="mb-4 flex flex-row">
+            <div className="mb-4 flex flex-col">
               <label forhml="percentage_exterior_user">
                 Porcentaje Exterior:
               </label>
@@ -71,7 +71,7 @@ function FormComponent() {
                 onBlur={handleBlur}
                 name="percentage_exterior_user"
                 value={values.percentage_exterior_user}
-                className="text-black pl-2 py-1 w-52 ml-3"
+                className="text-black pl-2 py-1 w-52 mt-3"
               />
             </div>
             <div>
