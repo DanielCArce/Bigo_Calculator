@@ -40,7 +40,7 @@ export default function Home() {
               <DisplayInfoComponent />
             </div>
           </div>
-          <footer>
+          <footer className="font-base justify-center w-2/4 container mx-auto py-8 px-3 text-center">
             <span>
               Hecho con amor por{" "}
               <a href="https://twitter.com/danielcarce">@DanielCArce</a>
