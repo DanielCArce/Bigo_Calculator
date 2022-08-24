@@ -84,12 +84,6 @@ function FormComponent() {
               >
                 Realizar Calculo
               </button>
-              <button
-                className="bg-red-600 px-3 py-2 hover:border-2 border-zinc-400"
-                onClick={handleReset}
-              >
-                Reset Valores
-              </button>
             </div>
           </form>
         )}
