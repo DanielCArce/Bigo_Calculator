@@ -25,13 +25,17 @@ export default function Home() {
               </h3>
               <ul className="list-disc list-inside">
                 <li className="mb-4">
-                  Este calculador no esta asoaciado de ninguna manera con Bigo
+                  Este calculador no esta asociado de ninguna manera con Bigo
                   Live ni ninguna empresa asociada.
                 </li>
                 <li>
                   Los calculos se realizan de acuerdo a la información
                   suministrada por el usuario, por lo tanto solo se es
                   responsable por cualquier dato errado de margen de error.
+                </li>
+                <li>
+                  Se recomienda pasarse del monto calculado para compensar
+                  cualquier factor de redondeo o milecimas.
                 </li>
               </ul>
             </div>
