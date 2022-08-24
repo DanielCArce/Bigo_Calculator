@@ -4,6 +4,9 @@ import { CalculateContext } from "../contexts/CalculateContext";
 import { ACTIONS } from "../reducer/ReducerFunction";
 function FormComponent() {
   const { state, dispatch } = useContext(CalculateContext);
+  const handleReset = () => {
+    dispatch({ type: ACTIONS.SET_RESET_VALUES });
+  };
 
   return (
     <React.Fragment>
@@ -80,6 +83,12 @@ function FormComponent() {
                 className="bg-blue-600 px-3 py-2 hover:border-2 border-zinc-400"
               >
                 Realizar Calculo
+              </button>
+              <button
+                className="bg-red-600 px-3 py-2 hover:border-2 border-zinc-400"
+                onClick={handleReset}
+              >
+                Reset Valores
               </button>
             </div>
           </form>

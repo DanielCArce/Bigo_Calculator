@@ -3,6 +3,7 @@ export const ACTIONS = {
   SET_PERCENTAGE_LIVEDATA: "SET_PERCENTAGE_LIVEDATA",
   SET_SEEDS_BALANCE: "SET_SEEDS_BALANCE",
   SET_SEEDS_TOTAL: "SET_SEEDS_TOTAL",
+  SET_RESET_VALUES: "SET_RESET_VALUES",
 };
 export default function ReducerFunction(state, action) {
   switch (action.type) {
@@ -26,6 +27,14 @@ export default function ReducerFunction(state, action) {
         ...state,
         seeds_total: action.payload,
       };
+    case ACTIONS.SET_RESET_VALUES:
+      return {
+        seeds_on_livedata: 0,
+        percentage_exterior_livedata: 0.4,
+        seeds_for_balance: 0,
+        seeds_total: 0,
+      };
+
     default:
       return state;
   }
