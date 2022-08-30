@@ -37,7 +37,7 @@ function DisplayInfoComponent() {
           <tr>
             <td>Semillas Para compensar:</td>
             <td>
-              {Intl.NumberFormat("en-US").format(state.seeds_for_balance)}
+              {Intl.NumberFormat("en-US").format(state.seeds_for_balance)}{" "}
             </td>
           </tr>
           <tr>
