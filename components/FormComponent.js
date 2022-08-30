@@ -81,7 +81,7 @@ function FormComponent() {
             type="submit"
             className="bg-blue-600 px-3 py-2 hover:border-2 border-zinc-400"
           >
-            Realizar Calculo
+            Calcula
           </button>
         </div>
       </form>

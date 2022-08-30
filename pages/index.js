@@ -22,7 +22,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row px-2 py-6
            container mx-auto"
           >
-            <RulesComponent className="w-1/2 mr-4 xsm:w-auto xsm:mb-4" />
+            <RulesComponent className="w-1/2 mr-4 pl-4 xsm:w-auto xsm:mb-4" />
             <div className="w-1/2 xsm:w-auto">
               <FormComponent />
               <DisplayInfoComponent />
