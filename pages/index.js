@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useReducer } from "react";
-import FormComponent from "../components/FormComponent";
+import LatamPercentageFormComponent from "../components/LatamPercentageFormComponent";
 import RulesComponent from "../components/RulesComponent";
 import { CalculateContext, initialState } from "../contexts/CalculateContext";
 import ReducerFunction from "../reducer/ReducerFunction";
@@ -24,7 +24,7 @@ export default function Home() {
           >
             <RulesComponent className="w-1/2 mr-4 pl-4 xsm:w-auto xsm:mb-4" />
             <div className="w-1/2 xsm:w-auto">
-              <FormComponent />
+              <LatamPercentageFormComponent />
               <DisplayInfoComponent />
             </div>
           </div>

@@ -3,7 +3,7 @@ import { PercentageFormSchema } from "../schemas/LatamFormSchema";
 import React, { useContext } from "react";
 import { CalculateContext } from "../contexts/CalculateContext";
 import { ACTIONS } from "../reducer/ReducerFunction";
-function FormComponent() {
+function LatamPercentageFormComponent() {
   const { state, dispatch } = useContext(CalculateContext);
   const handleReset = () => {
     dispatch({ type: ACTIONS.SET_RESET_VALUES });
@@ -88,7 +88,7 @@ function FormComponent() {
     </React.Fragment>
   );
 }
-export default FormComponent;
+export default LatamPercentageFormComponent;
 // {
 //   seeds_on_livedata: 0,
 //   percentage_exterior_livedata: 0.42,
