@@ -34,12 +34,12 @@ export default function ExchangeCalculate() {
       </h2>
       <ExchangeContext.Provider value={{ state, ACTIONS, dispatch }}>
         <React.Fragment>
-          <div className="container mx-auto w-1/2 flex flex-row   justify-center sm:flex-col-reverse xsm:flex-col-reverse">
-            <div className="container mx-auto flex  w-2/3 mr-4 pr-5 sm:mr-0 sm:pr-0 sm:mt-5 xsm:mt-5 xsm:pt-5">
+          <div className="container mx-auto w-1/2 flex flex-row  py-4 justify-center sm:flex-row xsm:flex-row">
+            <div className="mr-4">
               <TableExchange />
             </div>
-            <div className="container mx-auto w-1/2 flex flex-row justify-between sm:flex-col xsm:flex-col">
-              <ExchangeConvertidorForm className="mr-5 sm:mr-0 sm:mb-5 xsm:mb-5" convertToDiamonds={false} />
+            <div className="flex flex-row sm:flex-col xsm:flex-col">
+              <ExchangeConvertidorForm convertToDiamonds={false} />
               <ExchangeConvertidorForm convertToDiamonds={true} />
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function LatamPercentageCalculate() {
         Balance meta latam
       </h2>
       <CalculateContext.Provider value={{ state, ACTIONS, dispatch }}>
-        <div className="container mx-auto w-1/2 flex flex-row  xms:flex-col justify-between">
+        <div className="container mx-auto w-1/2 flex flex-row  sm:flex-row xms:flex-col justify-between">
           <div className="mr-6 xsm:mr-0 xsm:mb-6">
             <LatamPercentageForm />
           </div>
