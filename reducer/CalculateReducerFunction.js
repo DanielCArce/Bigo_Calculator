@@ -5,7 +5,7 @@ export const ACTIONS = {
   SET_SEEDS_TOTAL: "SET_SEEDS_TOTAL",
   SET_RESET_VALUES: "SET_RESET_VALUES",
 };
-export default function ReducerFunction(state, action) {
+export function CalculateReducer(state, action) {
   switch (action.type) {
     case ACTIONS.SET_SEEDS_LIVEDATA:
       return {
