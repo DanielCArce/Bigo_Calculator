@@ -1,41 +1,40 @@
 import Head from "next/head";
-import React, { useReducer } from "react";
-import LatamPercentageFormComponent from "../components/LatamPercentageFormComponent";
-import RulesComponent from "../components/RulesComponent";
-import { CalculateContext, initialState } from "../contexts/CalculateContext";
-import ReducerFunction from "../reducer/ReducerFunction";
-import DisplayInfoComponent from "./../components/DisplayInfoComponent";
-export default function Home() {
-  const [state, dispatch] = useReducer(ReducerFunction, initialState);
+import React from "react";
+import HeaderPage from "../components/HeaderPage";
+import RulesDisplay from "./../components/RulesDisplay";
+
+function index() {
   return (
     <React.Fragment>
       <Head>
-        <title>Calculo de Porcentaje Latam</title>
+        <title>Bigo Calculador - Gestión Simple</title>
+        <meta charset="utf-8" />
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        ></meta>
+          name="description"
+          content="Un calculador para aprender a compensar la meta de exteriorr  y aprender a hacer intercambios"
+        />
+        <meta name="author" content="DanielCArce" />
+        <meta name="copyright" content="DanielCArce" />
+        <meta name="robots" content="index,nofollow" />
+        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="noindex,nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <CalculateContext.Provider value={{ state, dispatch }}>
-        <React.Fragment>
-          <div
-            className="flex flex-col sm:flex-row px-2 py-6
-           container mx-auto"
-          >
-            <RulesComponent className="w-1/2 mr-4 pl-4 xsm:w-auto xsm:mb-4" />
-            <div className="w-1/2 xsm:w-auto">
-              <LatamPercentageFormComponent />
-              <DisplayInfoComponent />
-            </div>
-          </div>
-          <footer className="font-base justify-center w-2/4 container mx-auto py-8 px-3 text-center">
-            <span>
-              Hecho con amor por{" "}
-              <a href="https://twitter.com/danielcarce">@DanielCArce</a>
-            </span>
-          </footer>
-        </React.Fragment>
-      </CalculateContext.Provider>
+      <HeaderPage />
+      <div>index</div>
+      <RulesDisplay
+        rules={[
+          {
+            id: 1,
+            body: "Todo calculo se realiza con un monto bastante cerca a la realidad, el margen de error es minimo.",
+          },
+          { id: 2, body: "" },
+        ]}
+        title="Reglas de Intercambios 
+        y Balance Porcentaje Latam"
+      />
     </React.Fragment>
   );
 }
+
+export default index;
