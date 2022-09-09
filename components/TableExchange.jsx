@@ -11,7 +11,7 @@ export default function TableExchange() {
   //   diamondsFromExchange: 0,
   return (
     <div>
-      <table className="border-separate">
+      <table className="border-separate text-lg">
         <thead>
           <tr>
             <td

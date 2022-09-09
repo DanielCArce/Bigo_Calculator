@@ -21,18 +21,25 @@ function index() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
-      <div>index</div>
-      <RulesDisplay
-        rules={[
-          {
-            id: 1,
-            body: "Todo calculo se realiza con un monto bastante cerca a la realidad, el margen de error es minimo.",
-          },
-          { id: 2, body: "" },
-        ]}
-        title="Reglas de Intercambios 
-        y Balance Porcentaje Latam"
-      />
+      <div className="cotainer mx-auto w-1/2">
+        <RulesDisplay
+          rules={[
+            {
+              id: 1,
+              body: "Revisar las montos ingresados y las fechas de la actualización.",
+            },
+            {
+              id: 2,
+              body: "Las herramientras no estan asociadas de ninguna manera con BigoLive ni ninguna empresa asociada.",
+            },
+            {
+              id: 3,
+              body: "Aunque los calculos estan hechos contemplando un margen de error muy pequeño, se recomienda pasar un poco mas arriba del calculo.",
+            },
+          ]}
+          title="Consideraciones para las herramientas"
+        />
+      </div>
     </React.Fragment>
   );
 }

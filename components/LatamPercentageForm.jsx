@@ -44,7 +44,7 @@ function LatamPercentageForm() {
     },
   });
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="text-lg"onSubmit={handleSubmit}>
       <div className="flex flex-row xsm:flex-col sm:flex-col mb-7">
         <label htmlFor="seeds_livedata_user">Semillas en Livedata:</label>
         <input
