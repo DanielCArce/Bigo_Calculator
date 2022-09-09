@@ -1,15 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import Link from "next/link";
-import {} from "react-icons";
+
 function HeaderPage() {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <header className="flex flex-row place-content-between py-4 px-2">
       <div>
         <h1 className="text-3xl font-bold">Bigo Calculador</h1>
         <h2 className="text-xl font-medium">Herramientas simples que ayudan</h2>
       </div>
-      <nav>
-        <ul className="flex flex-row">
+      <nav className="">
+        <ul className="">
           <li>
             <Link href="/">
               <a className="block px2-2 py-1 hover:border-b-2">Inicio</a>

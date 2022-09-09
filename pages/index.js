@@ -21,7 +21,7 @@ function index() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
-      <div className="cotainer mx-auto w-1/2">
+      <div className="cotainer mx-auto lg:w-3/4 md:w-3/4 sm:w-screen xsm:w-full px-1 py-1">
         <RulesDisplay
           rules={[
             {

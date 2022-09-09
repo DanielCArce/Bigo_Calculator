@@ -24,15 +24,15 @@ export default function LatamPercentageCalculate() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
-      <h2 className="text-center text-3xl font-semibold mb-5 uppercase">
+      <h2 className="text-center sm:text-xl lg:text-2xl md:text-2xl font-semibold mb-5 uppercase">
         Balance meta latam
       </h2>
       <CalculateContext.Provider value={{ state, ACTIONS, dispatch }}>
-        <div className="container mx-auto w-1/2 flex flex-row  sm:flex-row xms:flex-col justify-between">
-          <div className="mr-6 xsm:mr-0 xsm:mb-6">
+        <div className="cotainer mx-auto flex xsm:flex-col sm:flex-col md:flex-row lg:flex-row lg:w-3/4 md:w-3/4 sm:w-screen xsm:w-full px-1 py-1 justify-between">
+          <div className="xsm:mx-auto sm:mx-auto md:mx-auto xsm:mt-4 sm:mt-4">
             <LatamPercentageForm />
           </div>
-          <div>
+          <div className="xsm:mx-auto sm:mx-auto xsm:pl-3 sm:pl-3 xsm:mb-4 sm:mb-4 flex flex-row sm:flex-col xsm:flex-col">
             <TableCalculateLatam />
           </div>
         </div>

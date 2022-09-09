@@ -34,7 +34,7 @@ function ExchangeConvertidorForm({ className, convertToDiamonds }) {
 
   return (
     <React.Fragment>
-      <form {...className} onSubmit={handleSubmit}>
+      <form className="mx-auto" onSubmit={handleSubmit}>
         <div className=" mb-4">
           <h3 className="font-semibold text-xl">
             Tengo para Convertir{" "}
