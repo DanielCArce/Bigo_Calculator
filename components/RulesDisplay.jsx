@@ -9,7 +9,7 @@ function RulesDisplay({ rules = [], title = null, pagesLinks = [] }) {
           {title}
         </h2>
       ) : null}
-      <ol className="list-inside list-decimal">
+      <ol className="list-inside list-decimal w-1/2 container mx-auto">
         {rules.map((rule) => {
           return (
             <li className="text-lg mb-2" key={rule.id}>
