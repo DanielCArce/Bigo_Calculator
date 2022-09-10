@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { ExchangeFormSchema } from "../schemas/ExchangeFormSchema";
 function ExchangeConvertidorForm({ className, convertToDiamonds }) {
   const { state, ACTIONS, dispatch } = useContext(ExchangeContext);
-  const { values, handleSubmit, handleChange, handleBlur } = useFormik({
+  const { values, handleSubmit, handleChange, handleBlur, errors } = useFormik({
     initialValues: {
       quantity: 0,
     },
@@ -34,10 +34,9 @@ function ExchangeConvertidorForm({ className, convertToDiamonds }) {
 
   return (
     <React.Fragment>
-      <form className="mx-auto" onSubmit={handleSubmit}>
+      <form className="mx-auto mb-4" onSubmit={handleSubmit}>
         <div className=" mb-4">
           <h3 className="font-semibold text-xl">
-            Tengo para Convertir{" "}
             {convertToDiamonds
               ? "Semillas a Diamantes"
               : "Diamantes A Semillas"}
@@ -56,6 +55,7 @@ function ExchangeConvertidorForm({ className, convertToDiamonds }) {
             onBlur={handleBlur}
             value={values.quantity}
           />
+          <span>{errors.quantity}</span>
         </div>
         <div>
           <button

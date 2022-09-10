@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { CalculateContext } from "../contexts/CalculateContext";
-import { GiCutDiamond, GiSeedling } from "react-icons/gi";
+import { GiSeedling } from "react-icons/gi";
 
 function TableCalculateLatam() {
   const { state } = useContext(CalculateContext);
@@ -34,7 +34,7 @@ function TableCalculateLatam() {
               {Intl.NumberFormat("en-US").format(state.seeds_on_livedata)}
             </td>
             <td>
-              <GiCutDiamond />
+              <GiSeedling />
             </td>
           </tr>
           <tr>

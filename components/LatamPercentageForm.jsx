@@ -48,14 +48,14 @@ function LatamPercentageForm() {
       <div className="flex flex-row xsm:flex-col sm:flex-col mb-7">
         <label htmlFor="seeds_livedata_user">Semillas en Livedata:</label>
         <input
-          className="w-52 text-black pl-2 py-1 mt-2"
+          className="w-55 text-black pl-2 py-1 mt-2"
           onChange={handleChange}
           id="seeds_livedata_user"
           onBlur={handleBlur}
           value={values.seeds_livedata_user}
           name="seeds_livedata_user"
           type="text"
-          placeholder="Un monto mayor a la meta minima 10,0000"
+          placeholder="Monto mayor a la meta de 10k"
         />
         <span>{errors.seeds_livedata_user}</span>
       </div>
@@ -64,14 +64,14 @@ function LatamPercentageForm() {
           Porcentaje Exterior en Livedata:
         </label>
         <input
-          className="w-52 text-black pl-2 py-1 mt-2"
+          className="w-55 text-black pl-2 py-1 mt-2"
           onChange={handleChange}
           id="percentage_exterior_user"
           onBlur={handleBlur}
           value={values.percentage_exterior_user}
           name="percentage_exterior_user"
           type="text"
-          placeholder="Un monto mayor a la meta minima 10,0000"
+          placeholder="Porcentaje Mayor a 40%"
         />
         <span>{errors.percentage_exterior_user}</span>
       </div>
