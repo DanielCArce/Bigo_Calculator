@@ -11,13 +11,11 @@ function index() {
         <meta charset="utf-8" />
         <meta
           name="description"
-          content="Un calculador para aprender a compensar la meta de exteriorr  y aprender a hacer intercambios"
+          content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
         />
         <meta name="author" content="DanielCArce" />
         <meta name="copyright" content="DanielCArce" />
-        <meta name="robots" content="index,nofollow" />
         <meta name="robots" content="index,follow" />
-        <meta name="robots" content="noindex,nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
@@ -30,11 +28,11 @@ function index() {
             },
             {
               id: 2,
-              body: "Las herramientras no estan asociadas de ninguna manera con BigoLive ni ninguna empresa asociada.",
+              body: "Las herramientras no están asociadas de ninguna manera con BigoLive ni ninguna empresa asociada.",
             },
             {
               id: 3,
-              body: "Los cálculos son bajo un margen muy minimo de error, aun asi para evitar cualquier minimo error se recomienda pasarse algo del monto suministrado.",
+              body: "Los cálculos son bajo un margen muy mínimo de error, aun así para evitar cualquier mínimo error se recomienda pasarse algo del monto suministrado.",
             },{
               id:4,
               body:"Recuerda que si lo recibes de un emisor el porcentaje  de apoyo cruzado sube porporcional al monto de semillas dado."

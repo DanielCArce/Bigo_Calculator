@@ -14,13 +14,11 @@ export default function LatamPercentageCalculate() {
         <meta charset="utf-8" />
         <meta
           name="description"
-          content="Un calculador para aprender a compensar la meta de exteriorr  y aprender a hacer intercambios"
+          content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
         />
         <meta name="author" content="DanielCArce" />
         <meta name="copyright" content="DanielCArce" />
-        <meta name="robots" content="index,nofollow" />
         <meta name="robots" content="index,follow" />
-        <meta name="robots" content="noindex,nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
