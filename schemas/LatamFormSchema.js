@@ -6,7 +6,7 @@ export const PercentageFormSchema = Yup.object({
     .typeError('Solo digitos númericos.')
     .min(10_000, "El minimo es ${min} meta minima")
     .max(10_000_000, "Lo máximo es ${max}")
-    .required("Es necesario para realizar el calculo."),
+    .required("Es necesario para realizar el cálculo."),
   percentage_exterior_user: Yup
     .number()
     .typeError("Solo digitos númericos.")

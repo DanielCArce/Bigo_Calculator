@@ -79,7 +79,7 @@ function TableCalculateLatam() {
                 className="py-2 px-3 bg-prymaryShareButton text-white"
                 onClick={handleShare}
               >
-                Compartir Calculo{" "}
+                Compartir Cálculo
               </button>
             </td>
           </tr>

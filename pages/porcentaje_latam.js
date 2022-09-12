@@ -3,7 +3,7 @@ import { CalculateContext, initialState } from "../contexts/CalculateContext";
 import { ACTIONS, CalculateReducer } from "../reducer/CalculateReducerFunction";
 import LatamPercentageForm from "../components/LatamPercentageForm";
 import TableCalculateLatam from "../components/TableLatam";
-import HeaderPage from "./../components/HeaderPage";
+import HeaderPage from "../components/HeaderPage";
 import Head from "next/head";
 export default function LatamPercentageCalculate() {
   const [state, dispatch] = useReducer(CalculateReducer, initialState);

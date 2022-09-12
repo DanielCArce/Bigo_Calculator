@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import porcentages from "../../porcentaje_latam.json";
+import porcentages from "../../porcentaje_apoyo_cruzado.json";
 const { balance_percentage } = porcentages;
 async function generate_estimation(seeds, percentage) {
   const percentage_for_calculate = balance_percentage.filter((value) => {

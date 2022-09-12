@@ -34,8 +34,11 @@ function index() {
             },
             {
               id: 3,
-              body: "Aunque los calculos estan hechos contemplando un margen de error muy pequeño, se recomienda pasar un poco mas arriba del calculo.",
-            },
+              body: "Los cálculos son bajo un margen muy minimo de error, aun asi para evitar cualquier minimo error se recomienda pasarse algo del monto suministrado.",
+            },{
+              id:4,
+              body:"Recuerda que si lo recibes de un emisor el porcentaje  de apoyo cruzado sube porporcional al monto de semillas dado."
+            },{id:5,body:"Premisa del cálculo, 40% maximo extranjero y a considerar maximo de 50% apoyo cruzado de emisor."}
           ]}
           title="Consideraciones para las herramientas"
         />

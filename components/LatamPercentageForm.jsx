@@ -55,7 +55,7 @@ function LatamPercentageForm() {
           value={values.seeds_livedata_user}
           name="seeds_livedata_user"
           type="text"
-          placeholder="Monto mayor a la meta de 10k"
+          placeholder="Monto mayor o igual a la meta de 10k"
         />
         <span>{errors.seeds_livedata_user}</span>
       </div>
@@ -71,7 +71,7 @@ function LatamPercentageForm() {
           value={values.percentage_exterior_user}
           name="percentage_exterior_user"
           type="text"
-          placeholder="Porcentaje Mayor a 40%"
+          placeholder="Porcentaje Mayor o igual a 40%"
         />
         <span>{errors.percentage_exterior_user}</span>
       </div>

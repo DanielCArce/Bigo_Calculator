@@ -25,14 +25,14 @@ function HeaderPage() {
             </Link>
           </li>
           <li className="ml-2">
-            <Link href="/LatamPercentageCalculate">
+            <Link href="/porcentaje_latam">
               <a className="block px2-2 py-1 hover:border-b-2">
                 Herramienta: Porcentaje Latam
               </a>
             </Link>
           </li>
           <li className="ml-2">
-            <Link href="/ExchangeCalculate">
+            <Link href="/intercambio_semillas_diamantes">
               <a className="block px2-2 py-1 hover:border-b-2">
                 Herramienta: Intercambio Semillas
               </a>
