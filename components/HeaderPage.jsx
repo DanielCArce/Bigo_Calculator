@@ -15,9 +15,12 @@ function HeaderPage() {
         <h2 className="text-xl font-medium">Herramientas simples que ayudan</h2>
       </div>
       <nav>
-        <span className="lg:hidden md:hidden sm:hidden xsm:flex" onClick={handleMenu}>
-          {isOpen?<VscChromeClose/> :<GiHamburgerMenu/>}
-          </span>
+        <span
+          className="lg:hidden md:hidden sm:hidden xsm:flex"
+          onClick={handleMenu}
+        >
+          {isOpen ? <VscChromeClose /> : <GiHamburgerMenu />}
+        </span>
         <ul className={`flex lg:flex-row md:flex md:flex-row`}>
           <li>
             <Link href="/">
@@ -35,6 +38,13 @@ function HeaderPage() {
             <Link href="/intercambio_semillas_diamantes">
               <a className="block px2-2 py-1 hover:border-b-2">
                 Herramienta: Intercambio Semillas
+              </a>
+            </Link>
+          </li>
+          <li className="ml-2">
+            <Link href="/apoyo_cruzado">
+              <a className="block px2-2 py-1 hover:border-b-2">
+                Herramienta: Apoyo Cruzado
               </a>
             </Link>
           </li>
