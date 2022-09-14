@@ -35,7 +35,6 @@ function LatamPercentageForm() {
         }
       );
       const data = await request.json();
-      console.log({ data });
       dispatch({
         type: ACTIONS.SET_SEEDS_BALANCE,
         payload: data.seeds_balance,

@@ -5,14 +5,12 @@ import { GiSeedling } from "react-icons/gi";
 function TableCalculateLatam() {
   const { state } = useContext(CalculateContext);
   const handleShare = () => {
-    let sharedData = {
-      title: "Bigo Calculador - Porcentaje Latam",
-      url: "https://bigo-calculator.vercel.app",
-      text: `Los diamantes para compensar es un total de ${Intl.NumberFormat(
-        "en-US"
-      ).format(state.seeds_for_balance)}`,
-    };
-    navigator.share(sharedData);
+    const sharedData = {
+      title:'Bigo Calculador - Balance Porcentaje Apoyo Exterior',
+      text:`Para Compensar ${state.seeds_on_livedata} con un porcentaje extranjero de ${state.percentage_exterior_livedata}% se necesita recibir ${state.seeds_for_balance} diamantes de latam.`,
+      url:'https://bigo-calculator.vercel.app/'
+    }
+      navigator.share(sharedData);
   };
   return (
     <React.Fragment>
