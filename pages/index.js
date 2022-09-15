@@ -8,7 +8,7 @@ function index() {
     <React.Fragment>
       <Head>
         <title>Bigo Calculador - Gestión Simple</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta
           name="description"
           content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
@@ -19,7 +19,7 @@ function index() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <HeaderPage />
-      <div className="cotainer mx-auto lg:w-3/4 md:w-3/4 sm:w-screen xsm:w-full px-1 py-1">
+      <div className="cotainer mx-auto">
         <RulesDisplay
           rules={[
             {
