@@ -4,6 +4,7 @@ import { ACTIONS, ApoyoReducer } from "../reducer/ApoyoReducerFunction";
 import ApoyoCruzadoForm from "../components/ApoyoCruzadoForm";
 import TableApoyoCruzado from "../components/TableApoyoCruzado";
 import HeaderPage from "../components/HeaderPage";
+import FooterPage from '../components/FooterPage';
 import Head from "next/head";
 export default function ApoyoCruzadoCalculate() {
   const [state, dispatch] = useReducer(ApoyoReducer, initialState);
@@ -35,6 +36,7 @@ export default function ApoyoCruzadoCalculate() {
           </div>
         </div>
       </ApoyoCruzadoContext.Provider>
+      <FooterPage/>
     </React.Fragment>
   );
 }

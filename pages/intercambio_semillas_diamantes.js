@@ -5,6 +5,7 @@ import ExchangeConvertidorForm from "../components/ExchangeConvertidorForm";
 import TableExchange from "../components/TableExchange";
 import RulesDisplay from "../components/RulesDisplay";
 import HeaderPage from "../components/HeaderPage";
+import FooterPage from '../components/FooterPage';
 import Head from "next/head";
 export default function ExchangeCalculate() {
   const [isDiamond, setIsDiamond] = useState(false);
@@ -43,6 +44,7 @@ export default function ExchangeCalculate() {
           </div>
         </React.Fragment>
       </ExchangeContext.Provider>
+      <FooterPage/>
     </React.Fragment>
   );
 }

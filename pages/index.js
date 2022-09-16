@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import HeaderPage from "../components/HeaderPage";
+import FooterPage from '../components/FooterPage';
 import RulesDisplay from "./../components/RulesDisplay";
 
 function index() {
@@ -41,6 +42,7 @@ function index() {
           title="Consideraciones para las herramientas"
         />
       </div>
+      <FooterPage/>
     </React.Fragment>
   );
 }
