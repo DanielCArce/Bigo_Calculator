@@ -11,14 +11,6 @@ function LatamPercentageForm() {
     },
     validationSchema: PercentageFormSchema,
     onSubmit: async (values) => {
-      dispatch({
-        type: ACTIONS.SET_SEEDS_LIVEDATA,
-        payload: values.seeds_livedata_user,
-      });
-      dispatch({
-        type: ACTIONS.SET_PERCENTAGE_LIVEDATA,
-        payload: values.percentage_exterior_user,
-      });
       let bodyContent = JSON.stringify({
         seeds_on_livedata: state.seeds_on_livedata,
         exterior_percentage_on_livedata:
@@ -35,6 +27,14 @@ function LatamPercentageForm() {
         }
       );
       const data = await request.json();
+      dispatch({
+        type: ACTIONS.SET_SEEDS_LIVEDATA,
+        payload: values.seeds_livedata_user,
+      });
+      dispatch({
+        type: ACTIONS.SET_PERCENTAGE_LIVEDATA,
+        payload: values.percentage_exterior_user,
+      });
       dispatch({
         type: ACTIONS.SET_SEEDS_BALANCE,
         payload: data.seeds_balance,
