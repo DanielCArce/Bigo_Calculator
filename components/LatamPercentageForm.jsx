@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { PercentageFormSchema } from "../schemas/LatamFormSchema";
 import { useFormik } from "formik";
 import { CalculateContext } from "../contexts/CalculateContext";
@@ -11,18 +11,10 @@ function LatamPercentageForm() {
     },
     validationSchema: PercentageFormSchema,
     onSubmit: async (values) => {
-      dispatch({
-        type: ACTIONS.SET_SEEDS_LIVEDATA,
-        payload: values.seeds_livedata_user,
-      });
-      dispatch({
-        type: ACTIONS.SET_PERCENTAGE_LIVEDATA,
-        payload: values.percentage_exterior_user,
-      });
       let bodyContent = JSON.stringify({
-        seeds_on_livedata: state.seeds_on_livedata,
+        seeds_on_livedata: values.seeds_on_livedata_user,
         exterior_percentage_on_livedata:
-          state.percentage_exterior_livedata / 100,
+          values.percentage_exterior_user / 100,
       });
       const request = await fetch(
         "https://bigo-calculator.vercel.app/api/calculate",
@@ -36,12 +28,26 @@ function LatamPercentageForm() {
       );
       const data = await request.json();
       dispatch({
+      type: ACTIONS.SET_SEEDS_LIVEDATA,
+      payload: values.seeds_livedata_user,
+    });
+          dispatch({
+        type: ACTIONS.SET_PERCENTAGE_LIVEDATA,
+        payload: values.percentage_exterior_user,
+      })
+      dispatch({
         type: ACTIONS.SET_SEEDS_BALANCE,
         payload: data.seeds_balance,
       });
       dispatch({ type: ACTIONS.SET_SEEDS_TOTAL, payload: data.seeds_total });
     },
   });
+  useEffect(() => {
+    
+  }, [values.seeds_livedata_user])
+  useEffect(() => {
+;
+  )
   return (
     <form className="lg:mr-4 xsm:mr-0 xsm:mb-6" onSubmit={handleSubmit}>
       <div className="flex flex-row xsm:flex-col sm:flex-col mb-7">

@@ -11,17 +11,10 @@ function ApoyoCruzadoForm() {
     },
     validationSchema: PercentageFormSchema,
     onSubmit: async (values) => {
-      dispatch({
-        type: ACTIONS.SET_SEEDS_LIVEDATA,
-        payload: values.seeds_livedata_user,
-      });
-      dispatch({
-        type: ACTIONS.SET_APOYO_CRUZADO_LIVEDATA,
-        payload: values.apoyo_cruzado_user,
-      });
+      
       let bodyContent = JSON.stringify({
-        seeds_on_livedata: state.seeds_on_livedata,
-        apoyo_cruzado_on_livedata: state.apoyo_cruzado_livedata / 100,
+        seeds_on_livedata: values.seeds_livedata_user,
+        apoyo_cruzado_on_livedata: values.apoyo_cruzado_user / 100,
       });
       const request = await fetch(
         "https://bigo-calculator.vercel.app/api/apoyoCruzado/",
@@ -34,7 +27,14 @@ function ApoyoCruzadoForm() {
         }
       );
       const data = await request.json();
-      console.log({ data });
+      dispatch({
+        type: ACTIONS.SET_SEEDS_LIVEDATA,
+        payload: values.seeds_livedata_user,
+      });
+      dispatch({
+        type: ACTIONS.SET_APOYO_CRUZADO_LIVEDATA,
+        payload: values.apoyo_cruzado_user,
+      });
       dispatch({
         type: ACTIONS.SET_SEEDS_BALANCE,
         payload: data.seeds_balance,

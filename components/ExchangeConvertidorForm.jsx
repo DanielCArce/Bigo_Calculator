@@ -10,8 +10,6 @@ function ExchangeConvertidorForm({ className, convertToDiamonds }) {
     },
     validationSchema: ExchangeFormSchema,
     onSubmit: async (values) => {
-      console.log({ values });
-      console.log({ convertToDiamonds });
       let parseBody = JSON.stringify({
         quantity: values.quantity,
         exchangeTo: convertToDiamonds ? "diamonds" : "seeds",
