@@ -13,7 +13,7 @@ async function generate_estimation(seeds, percentage) {
 async function handler(req, res) {
   const { seeds_on_livedata, exterior_percentage_on_livedata } = req.body;
   if (exterior_percentage_on_livedata <= 0.4) {
-    res.statusCode(200).json({
+    res.status(200).json({
       message: "No hay nada que compensar al ser menor de 40%",
       seeds_total: 0,
       seeds_balance: 0,
@@ -22,7 +22,7 @@ async function handler(req, res) {
   generate_estimation(seeds_on_livedata, exterior_percentage_on_livedata).then(
     (info) => {
       const finals = Math.round(Number(seeds_on_livedata) + info);
-      res.statusCode(200).json({
+      res.status(200).json({
         message: `Calculo generado ${new Date()}`,
         seeds_total: Math.ceil(finals),
         seeds_balance: Math.round(info),

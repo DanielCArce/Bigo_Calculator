@@ -22,7 +22,7 @@ async function handler(req, res) {
   generate_estimation(seeds_on_livedata, apoyo_cruzado_on_livedata).then(
     (info) => {
       const finals = Math.round(Number(seeds_on_livedata) + info);
-      res.statusCode(200).json({
+      res.status(200).json({
         message: `Calculo generado ${new Date()}`,
         seeds_total: Math.ceil(finals),
         seeds_balance: Math.round(info),

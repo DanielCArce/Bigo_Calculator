@@ -16,6 +16,6 @@ async function estimate_exchange(quantity, exchangeTo) {
 async function handler(req, res) {
   const { quantity, exchangeTo } = req.body;
   const result = await estimate_exchange(quantity, exchangeTo);
-  res.statusCode(200).json(result);
+  res.status(200).json(result);
 }
 export default handler;
