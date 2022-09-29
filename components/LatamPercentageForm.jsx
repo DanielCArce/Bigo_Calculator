@@ -20,7 +20,7 @@ function LatamPercentageForm() {
         payload: values.percentage_exterior_user,
       });
       let bodyContent = JSON.stringify({
-        seeds_on_livedata: values.seeds_on_livedata_user,
+        seeds_on_livedata: values.seeds_livedata_user,
         exterior_percentage_on_livedata: values.percentage_exterior_user / 100,
       });
       const request = await fetch(
