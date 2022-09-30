@@ -53,8 +53,9 @@ try {
   self.addEventListener("fetch", (event) => {
     // Skip cross-origin requests, like those for Google Analytics.
     if (event.request.url.startsWith(self.location.origin)) {
+      console.log({ request: event.request });
       if (event.request.method === "POST" || event.request.method === "PUT") {
-        self.skipWaiting();
+        event.respondWith(fetch(event.request));
       }
       event.respondWith(
         caches.match(event.request).then((cachedResponse) => {
