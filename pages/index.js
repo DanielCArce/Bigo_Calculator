@@ -10,6 +10,7 @@ function index() {
       <Head>
         <title>Bigo Calculador - Gestión Simple</title>
         <meta charSet="utf-8" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
           content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
@@ -34,15 +35,20 @@ function index() {
             {
               id: 3,
               body: "Los cálculos son bajo un margen muy mínimo de error, aun así para evitar cualquier mínimo error se recomienda pasarse algo del monto suministrado.",
-            },{
-              id:4,
-              body:"Recuerda que si lo recibes de un emisor el porcentaje  de apoyo cruzado sube porporcional al monto de semillas dado."
-            },{id:5,body:"Premisa del cálculo, 40% maximo extranjero y a considerar maximo de 50% apoyo cruzado de emisor."}
+            },
+            {
+              id: 4,
+              body: "Recuerda que si lo recibes de un emisor el porcentaje  de apoyo cruzado sube porporcional al monto de semillas dado.",
+            },
+            {
+              id: 5,
+              body: "Premisa del cálculo, 40% maximo extranjero y a considerar maximo de 50% apoyo cruzado de emisor.",
+            },
           ]}
           title="Consideraciones para las herramientas"
         />
       </div>
-      <FooterPage/>
+      <FooterPage />
     </React.Fragment>
   );
 }
