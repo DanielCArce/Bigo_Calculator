@@ -55,7 +55,7 @@ try {
     if (event.request.url.startsWith(self.location.origin)) {
       console.log({ request: event.request });
       if (event.request.method === "POST" || event.request.method === "PUT") {
-        event.respondWith(event.request);
+        event.respondWith(fetch(event.request));
       } else {
         event.respondWith(
           caches.match(event.request).then((cachedResponse) => {
