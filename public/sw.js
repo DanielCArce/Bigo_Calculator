@@ -55,24 +55,25 @@ try {
     if (event.request.url.startsWith(self.location.origin)) {
       console.log({ request: event.request });
       if (event.request.method === "POST" || event.request.method === "PUT") {
-        event.respondWith(fetch(event.request));
-      }
-      event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
+        event.respondWith(event.request);
+      } else {
+        event.respondWith(
+          caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
 
-          return caches.open(RUNTIME).then((cache) => {
-            return fetch(event.request, {}).then((response) => {
-              // Put a copy of the response in the runtime cache.
-              return cache.put(event.request, response.clone()).then(() => {
-                return response;
+            return caches.open(RUNTIME).then((cache) => {
+              return fetch(event.request, {}).then((response) => {
+                // Put a copy of the response in the runtime cache.
+                return cache.put(event.request, response.clone()).then(() => {
+                  return response;
+                });
               });
             });
-          });
-        })
-      );
+          })
+        );
+      }
     }
   });
 } catch (e) {
