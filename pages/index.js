@@ -1,7 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import HeaderPage from "../components/HeaderPage";
-import FooterPage from '../components/FooterPage';
 import RulesDisplay from "./../components/RulesDisplay";
 
 function index() {
@@ -9,18 +7,7 @@ function index() {
     <React.Fragment>
       <Head>
         <title>Bigo Calculador - Gestión Simple</title>
-        <meta charSet="utf-8" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta
-          name="description"
-          content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
-        />
-        <meta name="author" content="DanielCArce" />
-        <meta name="copyright" content="DanielCArce" />
-        <meta name="robots" content="index,follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <HeaderPage />
       <div className="cotainer mx-auto">
         <RulesDisplay
           rules={[
@@ -48,7 +35,6 @@ function index() {
           title="Consideraciones para las herramientas"
         />
       </div>
-      <FooterPage />
     </React.Fragment>
   );
 }

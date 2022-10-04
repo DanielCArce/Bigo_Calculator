@@ -3,9 +3,6 @@ import { ExchangeContext, initialState } from "../contexts/ExchangeContext";
 import { ACTIONS, ReducerFunction } from "../reducer/ExchangeReducerFunction";
 import ExchangeConvertidorForm from "../components/ExchangeConvertidorForm";
 import TableExchange from "../components/TableExchange";
-import RulesDisplay from "../components/RulesDisplay";
-import HeaderPage from "../components/HeaderPage";
-import FooterPage from '../components/FooterPage';
 import Head from "next/head";
 export default function ExchangeCalculate() {
   const [isDiamond, setIsDiamond] = useState(false);
@@ -17,17 +14,7 @@ export default function ExchangeCalculate() {
     <React.Fragment>
       <Head>
         <title>Bigo Calculador - Intercambios de Diamantes y Semillas</title>
-        <meta charset="utf-8" />
-        <meta
-          name="description"
-          content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
-        />
-        <meta name="author" content="DanielCArce" />
-        <meta name="copyright" content="DanielCArce" />
-        <meta name="robots" content="index,follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <HeaderPage />
       <h2 className="text-center sm:text-xl lg:text-2xl md:text-2xl font-semibold mb-5 uppercase">
         Intercambio de Semillas y Diamantes{" "}
       </h2>
@@ -44,7 +31,6 @@ export default function ExchangeCalculate() {
           </div>
         </React.Fragment>
       </ExchangeContext.Provider>
-      <FooterPage/>
     </React.Fragment>
   );
 }

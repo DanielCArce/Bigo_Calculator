@@ -3,8 +3,6 @@ import { CalculateContext, initialState } from "../contexts/CalculateContext";
 import { ACTIONS, CalculateReducer } from "../reducer/CalculateReducerFunction";
 import LatamPercentageForm from "../components/LatamPercentageForm";
 import TableCalculateLatam from "../components/TableLatam";
-import HeaderPage from "../components/HeaderPage";
-import FooterPage from '../components/FooterPage';
 import Head from "next/head";
 export default function LatamPercentageCalculate() {
   const [state, dispatch] = useReducer(CalculateReducer, initialState);
@@ -12,17 +10,7 @@ export default function LatamPercentageCalculate() {
     <React.Fragment>
       <Head>
         <title>Bigo Calculador - Calculadora de Porcentaje Latam</title>
-        <meta charset="utf-8" />
-        <meta
-          name="description"
-          content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
-        />
-        <meta name="author" content="DanielCArce" />
-        <meta name="copyright" content="DanielCArce" />
-        <meta name="robots" content="index,follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <HeaderPage />
       <h2 className="text-center sm:text-xl lg:text-2xl md:text-2xl font-semibold mb-5 uppercase">
         Balance meta latam
       </h2>
@@ -36,7 +24,6 @@ export default function LatamPercentageCalculate() {
           </div>
         </div>
       </CalculateContext.Provider>
-      <FooterPage/>
     </React.Fragment>
   );
 }

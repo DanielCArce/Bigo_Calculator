@@ -1,6 +1,6 @@
 {
-  "name": "Bigo Calculator",
-  "short_name": "Bigo Calculator",
+  "name": "Bigo Calculador",
+  "short_name": "Bigo Calculador",
   "background_color": "#333333",
   "display": "standalone",
   "scope": "/",
