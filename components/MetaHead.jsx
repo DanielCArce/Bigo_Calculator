@@ -4,12 +4,14 @@ export default function MetaHead({ metadata }) {
   return (
     <Head>
       <link rel="manifest" href="/manifest.json" />
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta name="application-name" content="Bigo Calculador" />
       <meta
         name="description"
         content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
       />
+      <link rel="icon" type="image/x-icon" href="/favicon32.png" />
+      <link rel="apple-touch-icon" href="/favicon32.png" />
       <meta name="author" content="DanielCArce" />
       <meta name="copyright" content="DanielCArce" />
       <meta name="robots" content="index,follow" />

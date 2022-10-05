@@ -1,5 +1,5 @@
 try {
-  const PRECACHE = "precache-v1.1.0";
+  const PRECACHE = "precache-v1.1.2";
   const RUNTIME = "runtime";
 
   // A list of local resources we always want to be cached.
@@ -8,14 +8,15 @@ try {
     `/apoyo_cruzado`, // Alias for index.html
     `/intercambio_semillas_diamantes`, // Alias for index.html
     `/porcentaje_latam`, // Alias for index.html
-    //'/api/apoyoCruzado',
-    //'/api/calculate',
-    //'/api/exchangeSeeds'
+    "manifest.json",
+    "favicon.svg",
+    //"/api/apoyoCruzado",
+    //"/api/calculate",
+    //"/api/exchangeSeeds",
   ];
 
   // The install handler takes care of precaching the resources we always need.
   self.addEventListener("install", (event) => {
-    console.log("installing sw");
     event.waitUntil(
       caches
         .open(PRECACHE)
