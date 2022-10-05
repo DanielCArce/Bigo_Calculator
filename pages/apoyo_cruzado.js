@@ -3,8 +3,7 @@ import { ApoyoCruzadoContext, initialState } from "../contexts/ApoyoContext";
 import { ACTIONS, ApoyoReducer } from "../reducer/ApoyoReducerFunction";
 import ApoyoCruzadoForm from "../components/ApoyoCruzadoForm";
 import TableApoyoCruzado from "../components/TableApoyoCruzado";
-import HeaderPage from "../components/HeaderPage";
-import FooterPage from '../components/FooterPage';
+
 import Head from "next/head";
 export default function ApoyoCruzadoCalculate() {
   const [state, dispatch] = useReducer(ApoyoReducer, initialState);
@@ -13,7 +12,6 @@ export default function ApoyoCruzadoCalculate() {
       <Head>
         <title>Bigo Calculador - Calculadora de Apoyo Cruzado</title>
       </Head>
-      <HeaderPage />
       <h2 className="text-center sm:text-xl lg:text-2xl md:text-2xl font-semibold mb-5 uppercase">
         Balance apoyo cruzado o de emisor
       </h2>
@@ -27,7 +25,6 @@ export default function ApoyoCruzadoCalculate() {
           </div>
         </div>
       </ApoyoCruzadoContext.Provider>
-      <FooterPage />
     </React.Fragment>
   );
 }
