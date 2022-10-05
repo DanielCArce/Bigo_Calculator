@@ -27,7 +27,6 @@ try {
   // The activate handler takes care of cleaning up old caches.
   self.addEventListener("activate", (event) => {
     const currentCaches = [PRECACHE, RUNTIME];
-    console.log("activate cache");
     event.waitUntil(
       caches
         .keys()
@@ -54,7 +53,6 @@ try {
   self.addEventListener("fetch", (event) => {
     // Skip cross-origin requests, like those for Google Analytics.
     if (event.request.url.startsWith(self.location.origin)) {
-      console.log({ request: event.request });
       if (event.request.method === "POST" || event.request.method === "PUT") {
         event.respondWith(fetch(event.request));
       } else {
