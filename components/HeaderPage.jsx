@@ -16,9 +16,9 @@ function HeaderPage() {
       <div>
         <Link href="/">
           <a>
-          <h1 className="text-3xl font-bold">Bigo Calculador</h1>
+            <h1 className="text-3xl font-bold">Bigo Calculador</h1>
           </a>
-          </Link>
+        </Link>
         <h2 className="text-xl font-medium">Herramientas simples que ayudan</h2>
       </div>
       <nav>
@@ -28,10 +28,12 @@ function HeaderPage() {
         >
           {isOpen ? <VscChromeClose /> : <GiHamburgerMenu />}
         </span>
-        <ul className={styles}>
+        <ul className={styles} onClick={handleMenu}>
           <li>
             <Link href="/">
-              <a className="block text-center px-2 py-1 hover:border-b-2">Inicio</a>
+              <a className="block text-center px-2 py-1 hover:border-b-2">
+                Inicio
+              </a>
             </Link>
           </li>
           <li className="ml-2">
