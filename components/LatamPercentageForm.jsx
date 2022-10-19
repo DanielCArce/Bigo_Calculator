@@ -24,7 +24,7 @@ function LatamPercentageForm() {
         exterior_percentage_on_livedata: values.percentage_exterior_user / 100,
       });
       const request = await fetch(
-        "https://bigo-calculator.vercel.app/api/calculate",
+        `${process.env.NEXT_PUBLIC_API_URI}/calculate`,
         {
           method: "POST",
           headers: {

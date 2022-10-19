@@ -15,7 +15,7 @@ function ExchangeConvertidorForm({ className, convertToDiamonds }) {
         exchangeTo: convertToDiamonds ? "diamonds" : "seeds",
       });
       const request = await fetch(
-        "https://bigo-calculator.vercel.app/api/exchangeSeeds",
+        `${process.env.NEXT_PUBLIC_API_URI}/exchangeSeeds`,
         {
           method: "POST",
           headers: {

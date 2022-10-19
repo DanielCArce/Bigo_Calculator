@@ -24,7 +24,7 @@ function ApoyoCruzadoForm() {
         apoyo_cruzado_on_livedata: values.apoyo_cruzado_user / 100,
       });
       const request = await fetch(
-        "https://bigo-calculator.vercel.app/api/apoyoCruzado/",
+        `${process.env.NEXT_PUBLIC_API_URI}/apoyoCruzado/`,
         {
           method: "POST",
           headers: {

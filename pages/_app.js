@@ -4,7 +4,7 @@ import MetaHead from "../components/MetaHead";
 import HeaderPage from "./../components/HeaderPage";
 import FooterPage from "./../components/FooterPage";
 
-function MyApp({ Component, pageProps, childen }) {
+function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("/sw.js");
