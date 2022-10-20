@@ -28,7 +28,7 @@ function HeaderPage() {
         >
           {isOpen ? <VscChromeClose /> : <GiHamburgerMenu />}
         </span>
-        <ul className={styles} onClick={handleMenu}>
+        <ul className={styles}>
           <li>
             <Link href="/">
               <a className="block text-center px-2 py-1 hover:border-b-2">
