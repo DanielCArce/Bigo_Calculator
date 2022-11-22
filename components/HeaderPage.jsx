@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState} from "react";
 import Link from "next/link";
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {VscChromeClose} from 'react-icons/vsc'
@@ -6,7 +6,7 @@ import {VscChromeClose} from 'react-icons/vsc'
 function HeaderPage() {
   const [isOpen, setIsOpen] = useState(false);
   const styles = +isOpen
-    ? "z-0 flex flex-col absolute w-3/4 bg-black h-screen py-4 px-1 top-0 right-0"
+    ? "z-0 flex flex-col absolute w-3/4 bg-black h-screen py-4 px-1 top-0 right-0 pt-12"
     : "flex-row hidden lg:flex md:flex sm:flex";
   const handleMenu = ()=>{
     setIsOpen(!isOpen);
@@ -28,7 +28,7 @@ function HeaderPage() {
         >
           {isOpen ? <VscChromeClose /> : <GiHamburgerMenu />}
         </span>
-        <ul className={styles}>
+        <ul className={styles} onClick={handleMenu}>
           <li>
             <Link href="/">
               <a className="block text-center px-2 py-1 hover:border-b-2">
