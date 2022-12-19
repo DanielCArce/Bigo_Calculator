@@ -9,7 +9,7 @@ function index() {
         <title>Bigo Calculador - Gestión Simple</title>
       </Head>
       <div className="cotainer mx-auto">
-        <RulesDisplay
+        {/* <RulesDisplay
           rules={[
             {
               id: 1,
@@ -33,7 +33,8 @@ function index() {
             },
           ]}
           title="Consideraciones para las herramientas"
-        />
+        /> */}
+        <h1>Fuera de linea,te estamos mejorando la experiencia y todas las herramientas... Vuelve pronto.</h1>
       </div>
     </React.Fragment>
   );

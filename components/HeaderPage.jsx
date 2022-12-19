@@ -21,7 +21,7 @@ function HeaderPage() {
         </Link>
         <h2 className="text-xl font-medium">Herramientas simples que ayudan</h2>
       </div>
-      <nav>
+      {/* <nav>
         <span
           className="block absolute lg:hidden md:hidden z-10 right-7 top-7"
           onClick={handleMenu}
@@ -58,7 +58,7 @@ function HeaderPage() {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 }
