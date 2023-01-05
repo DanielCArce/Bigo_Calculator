@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import {FaBars} from 'react-icons/fa'
 const routes = [{
     priority: 1,
@@ -19,7 +20,11 @@ const routes = [{
 }]
 function GlobalMenu() {
     const [isOpen, setIsOpen] = useState(false);
-    const handleMenu = useCallback(()=> setIsOpen(!isOpen),[isOpen])
+    const handleMenu = useCallback(() => setIsOpen(!isOpen), [isOpen])
+    const route = useRouter();
+    useEffect(() => {
+        return ()=>setIsOpen(!isOpen)
+    }, [route])
   return (
       <nav className="w-2/4">
           <span className="absolute top-4 right-4 z-10 py-2 px-2" onClick={handleMenu}>
