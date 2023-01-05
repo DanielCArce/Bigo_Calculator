@@ -1,25 +1,22 @@
-import React from 'react'
+import React from "react";
+import Head from "next/head";
 import { ExteriorSupportProvider } from "../contexts/ExteriorSupport.Context";
-import HeaderPage from '../components/HeaderPage'
-import Head from 'next/head'
-import ExteriorSupportForm from '../components/ExteriorSupport.Form'
-import ExteriorSupportTable from '../components/ExteriorSupport.Table';
+import ExteriorSupportForm from "../components/ExteriorSupport.Form";
+import ExteriorSupportTable from "../components/ExteriorSupport.Table";
 function ApoyoExtranjero() {
   return (
     <div>
       <Head>
         <title>Bigo Tools - Apoyo Extranjero</title>
       </Head>
-          <HeaderPage/>
       <ExteriorSupportProvider>
         <React.Fragment>
-
-        <ExteriorSupportForm />
-        <ExteriorSupportTable/>
+          <ExteriorSupportForm />
+          <ExteriorSupportTable />
         </React.Fragment>
-          </ExteriorSupportProvider>
-      </div>
-  )
+      </ExteriorSupportProvider>
+    </div>
+  );
 }
 
-export default ApoyoExtranjero
+export default ApoyoExtranjero;

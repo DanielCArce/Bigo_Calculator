@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import React, { useEffect } from "react";
+import HeaderPage from './../components/HeaderPage';
 
 function MyApp({ Component, pageProps }) {
   // useEffect(() => {
@@ -11,6 +12,7 @@ function MyApp({ Component, pageProps }) {
   // }, []);
   return (
     <React.Fragment>
+      <HeaderPage/>
       <Component {...pageProps} />;
     </React.Fragment>
   );

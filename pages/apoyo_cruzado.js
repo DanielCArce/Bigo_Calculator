@@ -1,5 +1,3 @@
-import React from 'react'
-import HeaderPage from '../components/HeaderPage'
 import Head from 'next/head'
 
 function ApoyoCruzado() {
@@ -8,7 +6,6 @@ function ApoyoCruzado() {
       <Head>
         <title>Bigo Tools - Apoyo Cruzado</title>
       </Head>
-          <HeaderPage/>
           <p>
           index
           </p>
