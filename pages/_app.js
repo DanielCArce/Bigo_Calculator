@@ -3,13 +3,13 @@ import React, { useEffect } from "react";
 import HeaderPage from './../components/layout/HeaderPage';
 
 function MyApp({ Component, pageProps }) {
-  // useEffect(() => {
-  //   if ("serviceWorker" in navigator) {
-  //     navigator.serviceWorker.register("/sw.js");
-  //   } else {
-  //     console.log("Service Worker is not supported.");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js");
+    } else {
+      console.log("Service Worker is not supported.");
+    }
+  }, []);
   return (
     <React.Fragment>
       <HeaderPage/>
