@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <HeaderPage/>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </React.Fragment>
-  );
+  )
 }
 export default MyApp;
