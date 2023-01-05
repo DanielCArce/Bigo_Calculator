@@ -8,7 +8,7 @@ function Index() {
         <title>Bigo Tools - Herramientas para Bigo Latam</title>
       </Head>
       <section>
-        <div className="px-2">
+        <div className="px-2 md:w-3/4 md:flex md:flex-col md:place-items-center md:justify-items-center">
           <h2 className="font-bold text-2xl mb-4">Condiciones de uso:</h2>
           <ul className="list-decimal list-inside">
             <li>Todo cálculo se realiza bajo una estimación matematica que permite reducir el margen
