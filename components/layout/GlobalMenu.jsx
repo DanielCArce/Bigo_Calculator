@@ -27,12 +27,12 @@ function GlobalMenu() {
     }, [route])
   return (
       <nav className="w-2/4">
-          <span className="absolute top-4 right-4 z-10 py-2 px-2" onClick={handleMenu}>
+          <span className="absolute top-4 right-4 z-10 py-2 px-2 md:hidden" onClick={handleMenu}>
               <FaBars />
           </span>
-          <div className={isOpen? "block absolute top-0 right-0":"hidden"}>
+          <div className={isOpen? "block absolute top-0 right-0":"hidden md:block static"}>
               
-          <ul className="flex w-full h-screen pt-8 md:h-3/4 flex-col py-3 px-2 bg-black">
+          <ul className="flex w-full h-screen pt-8 md:h-3/4 flex-col py-3 px-2 bg-black md:bg-transparent md:flex-row md:flex">
               {routes.filter((route)=> route.available === true).map((route) => {
                   return <li key={route.priority}>
                       <Link href={route.uri} >
