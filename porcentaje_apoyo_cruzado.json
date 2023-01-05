@@ -1,5 +1,4 @@
-{
-  "balance_percentage": [
+[
   {
     "crossed_percentage": 0.5,
     "balance_rate": 0
@@ -205,4 +204,3 @@
     "balance_rate": 0.999138598737443
   }
   ]
-}

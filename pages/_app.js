@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import React, { useEffect } from "react";
-import HeaderPage from './../components/HeaderPage';
+import HeaderPage from './../components/layout/HeaderPage';
 
 function MyApp({ Component, pageProps }) {
   // useEffect(() => {

@@ -1,48 +1,41 @@
 export const ACTIONS = {
   SET_SEEDS_LIVEDATA: "SET_SEEDS_LIVEDATA",
-  SET_APOYO_CRUZADO_LIVEDATA: "SET_APOYO_CRUZADO_LIVEDATA",
+  SET_CROSS_LIVEDATA: "SET_APOYO_CRUZADO_LIVEDATA",
   SET_SEEDS_BALANCE: "SET_SEEDS_BALANCE",
   SET_SEEDS_TOTAL: "SET_SEEDS_TOTAL",
   SET_RESET_VALUES: "SET_RESET_VALUES",
 };
-export function ApoyoReducer(state, action) {
+export function Reducer(state, action) {
   switch (action.type) {
     case ACTIONS.SET_SEEDS_LIVEDATA:
       return {
         ...state,
-        seeds_on_livedata: action.payload,
+        initial_seeds: action.payload,
       };
-    case ACTIONS.SET_APOYO_CRUZADO_LIVEDATA:
+    case ACTIONS.SET_CROSS_LIVEDATA:
       return {
         ...state,
-        apoyo_cruzado_livedata: action.payload,
+        cross_percentage: action.payload,
       };
     case ACTIONS.SET_SEEDS_BALANCE:
       return {
         ...state,
-        seeds_for_balance: action.payload,
+        balance_seeds: action.payload,
       };
     case ACTIONS.SET_SEEDS_TOTAL:
       return {
         ...state,
-        seeds_total: action.payload,
+        final_seeds: action.payload,
       };
     case ACTIONS.SET_RESET_VALUES:
       return {
-        seeds_on_livedata: 0,
-        apoyo_cruzado_livedata: 0.4,
-        seeds_for_balance: 0,
-        seeds_total: 0,
+        initial_seeds: 0,
+        cross_percentage: 0.4,
+        balance_seeds: 0,
+        final_seeds: 0,
       };
 
     default:
       return state;
   }
 }
-
-// {
-//   seeds_on_livedata: 0,
-//   percentage_exterior_livedata: 0.42,
-//   seeds_for_balance: 0,
-//   seeds_total: 0,
-// }

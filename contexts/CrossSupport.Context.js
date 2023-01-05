@@ -1,11 +1,17 @@
-import { createContext } from "react";
-const ApoyoCruzadoContext = createContext({});
+import { createContext, useReducer } from "react";
+import {ACTIONS, Reducer} from '../reducer/CrossSupport.Reducer'
+const CrossSupportContext = createContext({});
 
 const initialState = {
-  seeds_on_livedata: 10_000,
-  apoyo_cruzado_livedata: 50,
-  seeds_for_balance: 0,
-  seeds_total: 0,
+  initial_seeds: 0,
+  cross_percentage: 50,
+  balance_seeds: 0,
+  final_seeds: 0,
 };
-
-export { ApoyoCruzadoContext, initialState };
+const CrossSupportProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(Reducer, initialState);
+  return <CrossSupportContext.Provider value={{state, ACTIONS, dispatch}}>
+    {children}
+  </CrossSupportContext.Provider>
+}
+export { CrossSupportContext, CrossSupportProvider };
