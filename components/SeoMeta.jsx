@@ -1,9 +1,9 @@
-import React from "react";
-import Head from "next/head";
-export default function MetaHead({ metadata }) {
+import React from 'react'
+import Head from 'next/head'
+function SeoMeta() {
   return (
-    <Head>
-      <link rel="manifest" href="/manifest.json" />
+      <Head>
+          <link rel="manifest" href="/manifest.json" />
       <meta charSet="utf-8" />
       <meta name="application-name" content="Bigo Calculador" />
       <meta
@@ -33,5 +33,7 @@ export default function MetaHead({ metadata }) {
         content="Un calculador para aprender a compensar la meta de exterior  y aprender a hacer intercambios en la plataforma de bigoLive."
       />
     </Head>
-  );
+  )
 }
+
+export default SeoMeta

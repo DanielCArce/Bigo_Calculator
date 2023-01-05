@@ -1,5 +1,4 @@
-{
-  "balance_percentage": [
+[
     {
       "exterior_percent": 0.4,
       "balance_rate": 0
@@ -212,4 +211,3 @@
       "balance_rate": 1.4999999999999987
     }
   ]
-}

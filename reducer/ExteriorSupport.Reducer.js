@@ -5,35 +5,35 @@ export const ACTIONS = {
   SET_SEEDS_TOTAL: "SET_SEEDS_TOTAL",
   SET_RESET_VALUES: "SET_RESET_VALUES",
 };
-export function CalculateReducer(state, action) {
+export function Reducer(state, action) {
   switch (action.type) {
     case ACTIONS.SET_SEEDS_LIVEDATA:
       return {
         ...state,
-        seeds_on_livedata: action.payload,
+        initial_seeds: action.payload,
       };
     case ACTIONS.SET_PERCENTAGE_LIVEDATA:
       return {
         ...state,
-        percentage_exterior_livedata: action.payload,
+        exterior_percentage: action.payload,
       };
     case ACTIONS.SET_SEEDS_BALANCE:
       return {
         ...state,
-        seeds_for_balance: action.payload,
+        balance_seeds: action.payload,
       };
     case ACTIONS.SET_SEEDS_TOTAL:
       return {
         ...state,
-        seeds_total: action.payload,
+        final_seeds: action.payload,
       };
     case ACTIONS.SET_RESET_VALUES:
       return {
-        seeds_on_livedata: 0,
-        percentage_exterior_livedata: 0.4,
-        seeds_for_balance: 0,
-        seeds_total: 0,
-      };
+  exterior_percentage: 0,
+  initial_seeds: 0,
+  final_seeds: 0,
+  balance_seeds:0
+};
 
     default:
       return state;

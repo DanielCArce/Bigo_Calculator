@@ -53,7 +53,7 @@ try {
   self.addEventListener("fetch", (event) => {
     // Skip cross-origin requests, like those for Google Analytics.
     if (event.request.url.startsWith(self.location.origin)) {
-      if (event.request.method === "POST" || event.request.method === "PUT") {
+      if (event.request.method === "POST" || event.request.method === "PUT" || self.location.origin === "localhost") {
         event.respondWith(fetch(event.request));
       } else {
         event.respondWith(
