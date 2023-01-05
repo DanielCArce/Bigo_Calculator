@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import React, { useEffect } from "react";
 import HeaderPage from './../components/layout/HeaderPage';
+import FooterPage from "./../components/layout/FooterPage";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     <React.Fragment>
       <HeaderPage/>
       <Component {...pageProps} />
+      <FooterPage/>
     </React.Fragment>
   )
 }
