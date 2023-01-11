@@ -1,13 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { CrossSupportContext } from "../contexts/CrossSupport.Context";
 import ShareButton from './ShareButton';
 
 
 function CrossSupportTable() {
+  const resultRef = useRef()
     const { state } = useContext(CrossSupportContext);
     return (
       <div className="px-3 flex flex-col justify-items-center">
-        <table className="w-80">
+        <table className="w-80" ref={resultRef}>
           <thead>
             <tr>
               <td className="text-center font-italic" colSpan="4">Resumen Cálculo</td>
@@ -40,7 +41,7 @@ function CrossSupportTable() {
             </tr>
             <tr colSpan="2">
               <td>
-                <ShareButton data={{ type: 'Apoyo Cruzado Emisor', balance_seeds: state.balance_seeds, percentage: `${state.cross_percentage}%` }} />
+                <ShareButton data={{ type: 'Apoyo Cruzado Emisor', balance_seeds: state.balance_seeds, percentage: `${state.cross_percentage}%` }} img={resultRef} />
               </td>
             </tr>
           </tbody>

@@ -1,13 +1,18 @@
 import { useRouter } from 'next/router'
 import React from 'react'
-
-function ShareButton({ data }) {
+import {toBlob} from 'html-to-image'
+function ShareButton({ data, img }) {
     const route = useRouter()
     const handleShare = () => {
-        navigator.share({
+        toBlob(img.current).then((blob) => {
+            const file = new File([blob], 'estimation.png', { type: 'image/png' });
+            navigator.share({
             title: data.title,
             url: `https://bigo-calculator.vercel.app${route.pathname}`,
-        text:`Para Compensar un ${data.percentage} de ${data.type} se requiere de ${data.balance_seeds} diamantes.`})
+            text: `Para Compensar un ${data.percentage} de ${data.type} se requiere de ${data.balance_seeds} diamantes.`,
+            files: [file]
+            })
+        })
     }
     return (
         
