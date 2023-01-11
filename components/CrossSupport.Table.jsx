@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { CrossSupportContext } from "../contexts/CrossSupport.Context";
+import ShareButton from './ShareButton';
 
 
 function CrossSupportTable() {
@@ -13,7 +14,7 @@ function CrossSupportTable() {
             </tr>
             <tr className="border-b-4">
               <td className="font-bold text-center">Detalle</td>
-              <td className="font-bold">Monto</td>
+              <td className="font-bold text-right">Monto</td>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +38,14 @@ function CrossSupportTable() {
               <td colSpan="2">Semillas Al Final Meta</td>
               <td>{Intl.NumberFormat('es',{}).format(Math.ceil(state.final_seeds)) }</td>
             </tr>
+            <tr colSpan="2">
+              <td>
+                <ShareButton data={{ type: 'Apoyo Cruzado Emisor', balance_seeds: state.balance_seeds, percentage: `${state.cross_percentage}%` }} />
+              </td>
+            </tr>
           </tbody>
         </table>
+        
       </div>
   )
 }

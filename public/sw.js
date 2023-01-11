@@ -1,5 +1,5 @@
 try {
-  const PRECACHE = "precache-v1.1.9";
+  const PRECACHE = "precache-v1.2.1";
   const RUNTIME = "runtime";
 
   // A list of local resources we always want to be cached.
@@ -7,8 +7,6 @@ try {
     `/`, // Alias for index.html
     `/apoyo_cruzado`, // Alias for index.html
     `/apoyo_extranjero`, // Alias for index.html
-    "manifest.json",
-    "favicon.svg",
     //"/api/apoyoCruzado",
     //"/api/calculate",
     //"/api/exchangeSeeds",
