@@ -9,7 +9,7 @@ function ShareButton({ data, img }) {
             navigator.share({
             title: data.title,
             url: `https://bigo-calculator.vercel.app${route.pathname}`,
-            text: `Para Compensar un ${data.percentage} de ${data.type} se requiere de ${data.balance_seeds} diamantes.`,
+            text: `Para Compensar un ${data.percentage} de ${data.type} se requiere de ${Math.ceil(data.balance_seeds)} diamantes.`,
             files: [file]
             })
         })
