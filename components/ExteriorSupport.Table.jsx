@@ -40,7 +40,7 @@ function ExteriorSupportTable() {
             </tr>
             <tr colSpan="2">
               <td>
-                <ShareButton data={{ type: 'Apoyo Exterior / Latam', balance_seeds: state.balance_seeds, percentage: `${state.cross_percentage}%` }} img={resultRef } />
+                <ShareButton data={{ type: 'Apoyo Exterior / Latam', balance_seeds: state.balance_seeds, percentage: `${state.exterior_percentage}%` }} img={resultRef } />
               </td>
             </tr>
           </tbody>
