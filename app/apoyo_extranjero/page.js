@@ -1,14 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import { ExteriorSupportProvider } from "../contexts/ExteriorSupport.Context";
-import ExteriorSupportForm from "../components/ExteriorSupport.Form";
-import ExteriorSupportTable from "../components/ExteriorSupport.Table";
+import { ExteriorSupportProvider } from "../../contexts/ExteriorSupport.Context";
+import ExteriorSupportForm from "../../components/ExteriorSupport.Form";
+import ExteriorSupportTable from "../../components/ExteriorSupport.Table";
+export const metadata = {
+  title:'Bigo Calculador - Apoyo Cruzado'
+}
 function ApoyoExtranjero() {
   return (
     <React.Fragment>
-      <Head>
-        <title>Bigo Tools - Apoyo Extranjero</title>
-      </Head>
       <ExteriorSupportProvider>
         <React.Fragment>
           <h2 className="text-2xl text-center mb-3">Apoyo Extranjero</h2>

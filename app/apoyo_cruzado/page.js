@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import {CrossSupportProvider} from '../contexts/CrossSupport.Context'
-import CrossSupportForm from '../components/CrossSupport.Form'
-import CrossSupportTable from './../components/CrossSupport.Table';
+import {CrossSupportProvider} from '../../contexts/CrossSupport.Context'
+import CrossSupportForm from '../../components/CrossSupport.Form'
+import CrossSupportTable from '../../components/CrossSupport.Table';
 import React  from 'react';
+export const metadata = {
+  title:'Bigo Calculador - Apoyo Cruzado'
+}
 function ApoyoCruzado() {
+
   return (
     <div>
-      <Head>
-        <title>Bigo Tools - Apoyo Cruzado</title>
-      </Head>
       <CrossSupportProvider>
         <React.Fragment>
           <h2 className="text-2xl text-center mb-3">Apoyo Cruzado (De Emisores)</h2>

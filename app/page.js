@@ -1,12 +1,11 @@
 import React from 'react'
-import Head from 'next/head'
 
+export const metadata ={
+  title:'Bigo Calculador'
+}
 function Index() {
   return (
     <React.Fragment>
-      <Head>
-        <title>Bigo Tools - Herramientas para Bigo Latam</title>
-      </Head>
       <section>
         <div className="px-2 md:w-3/4 md:flex md:flex-col md:place-items-center md:justify-items-center">
           <h2 className="font-bold text-2xl mb-4">Condiciones de uso:</h2>
