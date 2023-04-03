@@ -1,3 +1,4 @@
+'use client'
 import React, { useContext, useRef } from 'react'
 import { CrossSupportContext } from "../contexts/CrossSupport.Context";
 import ShareButton from './ShareButton';

@@ -1,3 +1,4 @@
+'use client'
 import React, { useContext, useRef } from 'react'
 import { ExteriorSupportContext } from "../contexts/ExteriorSupport.Context";
 import ShareButton from './ShareButton';
