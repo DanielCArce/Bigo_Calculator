@@ -3,7 +3,7 @@ import CrossSupportForm from '../../components/CrossSupport.Form'
 import CrossSupportTable from '../../components/CrossSupport.Table';
 import React  from 'react';
 export const metadata = {
-  title:'Bigo Calculador - Apoyo Cruzado'
+  title:'Bigo Calculador - Apoyo Cruzado Emisores'
 }
 function ApoyoCruzado() {
 

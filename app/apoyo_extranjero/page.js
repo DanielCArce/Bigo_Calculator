@@ -4,7 +4,7 @@ import { ExteriorSupportProvider } from "../../contexts/ExteriorSupport.Context"
 import ExteriorSupportForm from "../../components/ExteriorSupport.Form";
 import ExteriorSupportTable from "../../components/ExteriorSupport.Table";
 export const metadata = {
-  title:'Bigo Calculador - Apoyo Cruzado'
+  title:'Bigo Calculador - Apoyo Extranjero Latam'
 }
 function ApoyoExtranjero() {
   return (
