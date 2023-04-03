@@ -1,3 +1,4 @@
+'use client'
 import { createContext, useReducer } from "react";
 import {ACTIONS, Reducer}from '../reducer/ExteriorSupport.Reducer'
 const ExteriorSupportContext = createContext({});
