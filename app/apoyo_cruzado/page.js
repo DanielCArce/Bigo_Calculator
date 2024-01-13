@@ -1,7 +1,8 @@
 import {CrossSupportProvider} from '../../contexts/CrossSupport.Context'
 import CrossSupportForm from '../../components/CrossSupport.Form'
-import CrossSupportTable from '../../components/CrossSupport.Table';
-import React  from 'react';
+//import CrossSupportTable from '../../components/CrossSupport.Table';
+import CrossSupportTable from '@/components/CrossSupport.Table'
+import React, { Suspense }  from 'react';
 export const metadata = {
   title:'Bigo Calculador - Apoyo Cruzado Emisores'
 }
@@ -12,7 +13,9 @@ function ApoyoCruzado() {
       <CrossSupportProvider>
         <React.Fragment>
           <h2 className="text-2xl text-center mb-3">Apoyo Cruzado (De Emisores)</h2>
+          <Suspense fallback={<p>Cargando la baina</p>}>
           <CrossSupportForm />
+          </Suspense>
           <div className="px-2 mb-5">
             <h3 className="font-bold text-xl text-center mb-2">Consideraciones a tomar en cuenta:</h3>
             <ul className="list-inside list-disc">

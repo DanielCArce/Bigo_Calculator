@@ -9,10 +9,11 @@ function ExteriorSupportTable() {
     return (
       <div className="px-3 flex flex-col justify-items-center">
         <table className="w-80" ref={resultRef}>
+          <caption className="text-center font-italic">Resumen Cálculo</caption>
           <thead>
-            <tr>
+            {/* <tr>
               <td className="text-center font-italic" colSpan="4">Resumen Cálculo</td>
-            </tr>
+            </tr> */}
             <tr className="border-b-4">
               <td className="font-bold text-center">Detalle</td>
               <td className="font-bold text-right">Monto</td>
