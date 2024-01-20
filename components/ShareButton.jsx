@@ -6,7 +6,7 @@ function ShareButton({ data, img }) {
         toBlob(img.current).then((blob) => {
             const file = new File([blob], 'estimation.png', { type: 'image/png' });
             const noty = new Notification('Listo para compartir',{body:`Imagen de ${data.type}`})
-            noty.addEventListener('close',() => {
+            noty.addEventListener('close', () => {
         
                 navigator.share({
                 title: data.title,
