@@ -3,25 +3,22 @@ import {toBlob} from 'html-to-image'
 function ShareButton({ data, img }) {
     //const route = useRouter()
     const handleShare = () => {
-        toBlob(img.current).then((blob) => {
-            const file = new File([blob], 'estimation.png', { type: 'image/png' });
-            const noty = new Notification('Listo para compartir',{body:`Imagen de ${data.type}`})
-            noty.addEventListener('close', () => {
-        
-                navigator.share({
-                title: data.title,
-                url: `https://bigo-calculator.vercel.app`,
-                text: `Para Compensar un ${data.percentage} de ${data.type} se requiere de ${Math.ceil(data.balance_seeds)} diamantes.`,
-                files: [file]
+        const tempfile = toBlob(img.current).then((blob) => new File([blob], 'estimations.png', { type: 'image/png' }))
+        Notification.requestPermission().then((permission) => {
+            if (permission == "granted") {
+                const noty = new Notification('Listo para compartir', { body: 'Imagen Generada exitosamente' })
+                noty.onclose((event) => {
+                    navigator.share({
+                        files: [tempFile],
+                        text: `Detalles del calculo de ${data.type}`,
+                        title: `Detalle Calculo`,
+                        url:'https://bigo-calculator.vercel.app'
+                    })
                 })
-            })
+            }
         })
     }
-    return (
-        
-            <button className="bg-red-500 text-slate-100 py-2 px-4" onClick={handleShare}>Compartir Resultado</button>
-        
-  )
+    return (<button className="bg-red-500 text-slate-100 py-2 px-4" onClick={handleShare}>Compartir Resultado</button>)
 }
 
 export default ShareButton
