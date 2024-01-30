@@ -13,26 +13,20 @@ function CrossSupportForm() {
     },
     validationSchema: CrossSupportSchema,
     onSubmit: async (values) => {
-      let bodyContent = JSON.stringify(
-        {
-          initial_seeds: values.total_seeds_user,
-          cross_percentage: (values.cross_percentage_user / 100)
-        });
-      const request = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URI}/CrossSupport`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: bodyContent,
-        });
-      const data = await request.json();
-      dispatch({ type: ACTIONS.SET_SEEDS_LIVEDATA, payload: values.total_seeds_user })
+      const bodyContent = JSON.stringify({"initial_seeds":values.total_seeds_user,"cross_percentage":(values.cross_percentage_user / 100)})
+      console.log({values, bodyContent})
+      const request = await fetch(`${process.env.NEXT_PUBLIC_API_URI}/CrossSupport`,{
+        method: 'POST',
+        headers:{
+          "Content-Type":"application/json"
+        },body: bodyContent
+      })
+      const data = await request.json()
+        dispatch({ type: ACTIONS.SET_SEEDS_LIVEDATA, payload: values.total_seeds_user })
       dispatch({ type: ACTIONS.SET_CROSS_LIVEDATA, payload: values.cross_percentage_user })
       dispatch({ type: ACTIONS.SET_SEEDS_BALANCE, payload: data.balance_seeds })
       dispatch({type:ACTIONS.SET_SEEDS_TOTAL, payload: data.balance_seeds + Number(values.total_seeds_user)})
-    },
+    }
   })
   return (
     <form
