@@ -4,7 +4,7 @@ import {ACTIONS, Reducer} from '../reducer/CrossSupport.Reducer'
 const CrossSupportContext = createContext({});
 
 const initialState = {
-  initial_seeds: 0,
+  initial_seeds: 10_000,
   cross_percentage: 50,
   balance_seeds: 0,
   final_seeds: 0,
