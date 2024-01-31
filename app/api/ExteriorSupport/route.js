@@ -215,7 +215,7 @@ async function generate_estimation(seeds, percentage) {
     "balance_rate": 1.4999999999999987
   }
   ];
-  //console.log({ PE, seeds,percentage  })
+  console.log({ PE, seeds,percentage  })
   const percentage_target = PE.filter((val) => {
     return val.exterior_percent === percentage;
   });

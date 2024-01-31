@@ -216,7 +216,7 @@ async function generate_estimation(seeds, percentage) {
   return Number(seeds * percentage_target[0].balance_rate)
 }
 export async function POST(request) {
-  console.log({req: await request.json()})
+  // console.log({req: await request.json()})
   const { initial_seeds, cross_percentage } = await request.json();
   if (cross_percentage <= 0.50) {
     return NextResponse.json({
