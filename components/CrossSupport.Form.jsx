@@ -13,7 +13,6 @@ function CrossSupportForm() {
     },
     validationSchema: CrossSupportSchema,
     onSubmit: async (values) => {
-      const abortController = new AbortController()
       const bodyContent = JSON.stringify(
         {
           initial_seeds:values.total_seeds_user,
@@ -24,8 +23,7 @@ function CrossSupportForm() {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
-        }, body: bodyContent,
-        signal: abortController.signal
+        }, body: bodyContent
       });
       const data = await request.json()
         dispatch({ type: ACTIONS.SET_SEEDS_LIVEDATA, payload: values.total_seeds_user })

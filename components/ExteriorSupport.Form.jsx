@@ -12,7 +12,6 @@ function ExteriorSupportForm() {
     },
     validationSchema: ExteriorSupportSchema,
     onSubmit: async (values) => {
-      const abortController = new AbortController()
       let bodyContent = JSON.stringify(
         {
           initial_seeds: values.total_seeds_user,
@@ -26,7 +25,6 @@ function ExteriorSupportForm() {
             "Content-Type": "application/json",
           },
           body: bodyContent,
-          signal: abortController.signal
         });
       const data = await request.json();
       dispatch({ type: ACTIONS.SET_SEEDS_LIVEDATA, payload: values.total_seeds_user })
