@@ -1,16 +1,21 @@
 # Bigo Calculador
+## NextJs Website
 
-Website hosted on [vercel][1]
+---
 
-## General Goal
+### Why The Tool
+The tool was created to help to brodcasters from Latamerican to get a better payment from the app and balance the numbers to get payied with a bonus. 
 
-Getting a simple way of generate the estimation of what is neccesary
-for balance the percentage for the goal.
+---
 
-### Requeriments
+### Features
 
-- NextJs.
-- ReactJs.
-- TailwindCSS.
+- Calculate ammount of diamonds to get balanced percentage between Brodcasters.
+- Calculate ammount of diamonds to get balanced percentage of gifters from EU and Latamerican gifters to get better payment to end of month.
+- Share to Whatsapp, Email and others apps to show the details.
 
-[1]: https://bigo-calculator.vercel.app
+### Tech Stack
+
+- ReactJs with Nextjs.
+- Hosted in Vercel.
+- TailwindCSS to styling.
